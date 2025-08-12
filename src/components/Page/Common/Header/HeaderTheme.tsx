@@ -1,33 +1,40 @@
 import { forwardRef, ForwardRefRenderFunction } from "react";
+import { Divider } from "@/components/UI";
 import { LayoutColor } from "@/components/UI/Layout/Context";
-import { ControlColor, InputValue } from "@/components/Control/type";
-import { CheckBox } from "@/components/Control";
+import { useLang } from "@/hooks";
 import useLayout from "@/components/UI/Layout/useLayout";
+import utils from "@/utils";
 
 const HeaderTheme: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
+  const { lang } = useLang();
+
   const { layoutValue, layoutApi } = useLayout();
 
   const colors: LayoutColor[] = ["blue", "green", "red", "orange", "yellow", "pink", "purple"];
 
-  const handleCheck = (color: InputValue) => {
-    console.log(color);
-    layoutApi.onSwitchColor(color as LayoutColor);
-  };
+  const className = utils.formatClassName("header-theme");
+
+  const handleSelect = (color: LayoutColor) => layoutApi.onSwitchColor(color as LayoutColor);
 
   const renderTheme = () => {
-    return colors.map((color) => (
-      <CheckBox
-        key={color}
-        color={layoutValue.layoutColor as ControlColor}
-        checked={layoutValue.layoutColor === color}
-        value={color}
-        label={color}
-        onCheckInput={handleCheck}
-      />
-    ));
+    return colors.map((color) => {
+      const isSelected = layoutValue.layoutColor === color;
+      const selectedClassName = isSelected ? `theme-item-${color}-selected` : "";
+      const itemClassName = utils.formatClassName("theme-item", `theme-item-${color}`, selectedClassName);
+      return (
+        <div key={color} className={itemClassName} onClick={() => handleSelect(color)}>
+          {color}
+        </div>
+      );
+    });
   };
 
-  return <div ref={ref}>{renderTheme()}</div>;
+  return (
+    <div ref={ref} className={className}>
+      <Divider>{lang.header.theme.title}</Divider>
+      {renderTheme()}
+    </div>
+  );
 };
 
 export default forwardRef(HeaderTheme);

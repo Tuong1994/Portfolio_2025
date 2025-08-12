@@ -22,7 +22,7 @@ const HeaderMenu: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
   };
 
   return (
-    <Space ref={ref} rootClassName={className}>
+    <Space ref={ref} rootClassName={className} justify="center">
       {renderMenu()}
     </Space>
   );

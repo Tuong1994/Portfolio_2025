@@ -6,6 +6,7 @@ import HeaderSetting from "./HeaderSetting";
 import useSticky from "./useSticky";
 import useLayout from "@/components/UI/Layout/useLayout";
 import utils from "@/utils";
+import HeaderMobile from "./HeaderMobile";
 
 const { Head } = Layout;
 
@@ -24,19 +25,30 @@ const Header: ForwardRefRenderFunction<HTMLDivElement, HeaderProps> = ({ rootCla
 
   const themeClassName = `portfolio-header-${layoutValue.layoutTheme}`;
 
-  const className = utils.formatClassName("portfolio-header", themeClassName, stickyClassName, rootClassName);
+  const colorClassName = `portfolio-header-${layoutValue.layoutColor}`;
+
+  const className = utils.formatClassName(
+    "portfolio-header",
+    themeClassName,
+    colorClassName,
+    stickyClassName,
+    rootClassName
+  );
 
   return (
     <Head ref={ref} rootClassName={className}>
-      <FlexRow aligns="middle">
-        <FlexCol>
+      <FlexRow style={{ width: "100%" }} aligns="middle" justify="between">
+        <FlexCol span={4}>
           <Logo />
         </FlexCol>
-        <FlexCol>
+        <FlexCol span={16}>
           <HeaderMenu />
         </FlexCol>
-        <FlexCol>
+        <FlexCol span={4}>
           <HeaderSetting />
+        </FlexCol>
+        <FlexCol span={0}>
+          <HeaderMobile />
         </FlexCol>
       </FlexRow>
     </Head>

@@ -7,12 +7,17 @@ const header_vn = {
     contact: "Liên hệ",
   },
   locale: {
+    title: "Ngôn ngữ",
     en: "Tiếng Anh",
     vn: "Tiếng Việt",
   },
   mode: {
+    title: "Trạng thái",
     light: "Sáng",
     dark: "Tối",
+  },
+  theme: {
+    title: "Chủ đề",
   },
 };
 

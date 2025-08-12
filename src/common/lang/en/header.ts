@@ -7,12 +7,17 @@ const header_en = {
     contact: "Contact",
   },
   locale: {
+    title: "Languages",
     en: "English",
     vn: "Vietnamese",
   },
   mode: {
+    title: "Mode",
     light: "Light",
     dark: "Dark",
+  },
+  theme: {
+    title: "Themes",
   },
 };
 
