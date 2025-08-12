@@ -1,0 +1,85 @@
+.anchor {
+  display: block;
+  padding: $p-1 - 0.4 $p-1;
+  border-radius: $rounded;
+  transition: all $transition-time-xs $transition-fn;
+  &:hover {
+    color: $text-white;
+  }
+}
+
+.anchor.anchor-active {
+  color: $text-white;
+}
+
+// Color hover
+.anchor-blue {
+  &:hover {
+    background: $bg-blue;
+  }
+}
+
+.anchor-red {
+  &:hover {
+    background: $bg-red;
+  }
+}
+
+.anchor-green {
+  &:hover {
+    background: $bg-green;
+  }
+}
+
+.anchor-orange {
+  &:hover {
+    background: $bg-orange;
+  }
+}
+
+.anchor-yellow {
+  &:hover {
+    background: $bg-yellow;
+  }
+}
+
+.anchor-pink {
+  &:hover {
+    background: $bg-pink;
+  }
+}
+
+.anchor-purple {
+  &:hover {
+    background: $bg-purple;
+  }
+}
+
+// Color active
+.anchor-blue.anchor-active {
+  background: $bg-blue;
+}
+
+.anchor-red.anchor-active {
+  background: $bg-red;
+}
+
+.anchor-green.anchor-active {
+  background: $bg-green;
+}
+
+.anchor-orange.anchor-active {
+  background: $bg-orange;
+}
+
+.anchor-yellow.anchor-active {
+  background: $bg-yellow;
+}
+
+.anchor-pink.anchor-active {
+  background: $bg-pink;
+}
+
+.anchor-purple.anchor-active {
+  background: $bg-purple;
+}

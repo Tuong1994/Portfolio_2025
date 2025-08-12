@@ -1,0 +1,249 @@
+.input {
+  .input-label {
+    margin-bottom: $m-1 - 0.5;
+    .label-required {
+      margin-right: $m-1 - 0.5;
+      color: $text-red;
+    }
+    .label-optional {
+      margin-left: $m-1 - 0.5;
+      color: $text-gray;
+      font-size: $text-xs;
+    }
+  }
+  .input-group {
+    display: flex;
+    align-items: center;
+    border: 0.5px solid $bg-gray;
+    background: $bg-white;
+    transition: background-color $transition-time-sm $transition-fn,
+      box-shadow $transition-time-xs $transition-fn;
+    .group-addon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .group-addon-before {
+      border-right: 0.5px solid $bg-gray;
+      padding-right: $p-1;
+      margin-right: $m-1;
+    }
+    .group-addon-after {
+      border-left: 0.5px solid $bg-gray;
+      padding-left: $p-1;
+      margin-left: $m-1;
+    }
+    .group-control {
+      width: $w-full;
+      display: flex;
+      .control-box {
+        width: $w-full;
+        border: unset;
+        background: transparent;
+      }
+      .control-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-left: $m-1 - 0.5;
+        &:hover path {
+          color: $text-black;
+        }
+        path {
+          color: $text-gray;
+          transition: color $transition-time-md $transition-fn;
+        }
+      }
+    }
+  }
+}
+
+// Disabled
+.input-disabled {
+  .input-label {
+    color: $text-gray;
+    * {
+      color: $text-gray;
+    }
+  }
+  .input-group {
+    background: $bg-slate !important;
+    &:hover {
+      border-color: $bg-gray !important;
+    }
+    .control-box {
+      color: $text-gray;
+      cursor: not-allowed;
+      &::placeholder {
+        color: $text-gray;
+      }
+    }
+  }
+}
+
+// Error
+.input-error {
+  .input-label {
+    color: $text-red;
+    * {
+      color: $text-red;
+    }
+  }
+  // .input-group {
+  //   border-color: $bg-red !important;
+  // }
+}
+
+// Size
+.input-sm {
+  .input-label {
+    font-size: $text-xs;
+    * {
+      font-size: $text-xs;
+    }
+  }
+  .input-group {
+    padding: $p-1 - 0.8 $p-1 - 0.4;
+    .group-control {
+      * {
+        font-size: $text-xs;
+      }
+    }
+  }
+}
+
+.input-md {
+  .input-group {
+    padding: $p-1 - 0.6 $p-1 - 0.2;
+  }
+}
+
+.input-lg {
+  .input-label {
+    font-size: $text-md;
+    * {
+      font-size: $text-md;
+    }
+  }
+  .input-group {
+    padding: $p-1 - 0.4 $p-1;
+    .group-control {
+      * {
+        font-size: $text-md;
+      }
+    }
+  }
+}
+
+// Shape
+.input-square {
+  .input-group {
+    border-radius: $rounded;
+  }
+}
+
+.input-round {
+  .input-group {
+    border-radius: $rounded-xxl;
+  }
+}
+
+// Color
+.input-blue {
+  .input-group {
+    &:hover {
+      border-color: $bg-blue;
+    }
+    &:focus-within {
+      box-shadow: 0 0 0 3px $bg-blue-rgba-sm;
+    }
+  }
+}
+
+.input-red {
+  .input-group {
+    &:hover {
+      border-color: $bg-red;
+    }
+    &:focus-within {
+      box-shadow: 0 0 0 3px $bg-red-rgba-sm;
+    }
+  }
+}
+
+.input-green {
+  .input-group {
+    &:hover {
+      border-color: $bg-green;
+    }
+    &:focus-within {
+      box-shadow: 0 0 0 3px $bg-green-rgba-sm;
+    }
+  }
+}
+
+.input-orange {
+  .input-group {
+    &:hover {
+      border-color: $bg-orange;
+    }
+    &:focus-within {
+      box-shadow: 0 0 0 3px $bg-orange-rgba-sm;
+    }
+  }
+}
+
+.input-yellow {
+  .input-group {
+    &:hover {
+      border-color: $bg-yellow;
+    }
+    &:focus-within {
+      box-shadow: 0 0 0 3px $bg-yellow-rgba-sm;
+    }
+  }
+}
+
+.input-purple {
+  .input-group {
+    &:hover {
+      border-color: $bg-purple;
+    }
+    &:focus-within {
+      box-shadow: 0 0 0 3px $bg-purple-rgba-sm;
+    }
+  }
+}
+
+.input-pink {
+  .input-group {
+    &:hover {
+      border-color: $bg-pink;
+    }
+    &:focus-within {
+      box-shadow: 0 0 0 3px $bg-pink-rgba-sm;
+    }
+  }
+}
+
+// Theme
+.input-light {
+  .input-group {
+    background: $bg-white;
+  }
+}
+
+.input-dark {
+  .input-group {
+    background: $bg-dark;
+    .control-box {
+      color: $text-white;
+    }
+    .control-action {
+      &:hover path {
+        color: $text-white !important;
+      }
+    }
+  }
+}

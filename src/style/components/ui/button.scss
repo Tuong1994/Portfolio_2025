@@ -1,0 +1,260 @@
+.button {
+  width: max-content;
+  background: $bg-slate;
+  border: 0.5px solid $bg-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: opacity $transition-time-sm $transition-fn, background-color $transition-time-md $transition-fn,
+    box-shadow 0.1s $transition-fn;
+  * {
+    margin: 0;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  .button-icon {
+    margin-right: calc($m-1 / 2);
+  }
+}
+
+// Shape
+.button-square {
+  border-radius: $rounded;
+}
+
+.button-round {
+  border-radius: $rounded-xxl;
+}
+
+// Size
+.button-sm {
+  padding: $p-1 - 0.8 $p-1 - 0.4;
+  font-size: $text-xs;
+  * {
+    font-size: $text-xs;
+  }
+}
+
+.button-md {
+  padding: $p-1 - 0.6 $p-1 - 0.2;
+}
+
+.button-lg {
+  padding: $p-1 - 0.4 $p-1;
+  font-size: $text-md;
+  * {
+    font-size: $text-md;
+  }
+}
+
+// Color
+.button-color {
+  *,
+  path {
+    color: $text-white !important;
+  }
+}
+
+.button-blue {
+  background: $bg-blue;
+  border-color: $bg-blue;
+  &:active {
+    box-shadow: 0 0 0 3px $bg-blue-rgba-sm;
+  }
+}
+
+.button-red {
+  background: $bg-red;
+  border-color: $bg-red;
+  &:active {
+    box-shadow: 0 0 0 3px $bg-red-rgba-sm;
+  }
+}
+
+.button-green {
+  background: $bg-green;
+  border-color: $bg-green;
+  &:active {
+    box-shadow: 0 0 0 3px $bg-green-rgba-sm;
+  }
+}
+
+.button-orange {
+  background: $bg-orange;
+  border-color: $bg-orange;
+  &:active {
+    box-shadow: 0 0 0 3px $bg-orange-rgba-sm;
+  }
+}
+
+.button-yellow {
+  background: $bg-yellow;
+  border-color: $bg-yellow;
+  &:active {
+    box-shadow: 0 0 0 3px $bg-yellow-rgba-sm;
+  }
+}
+
+.button-purple {
+  background: $bg-purple;
+  border-color: $bg-purple;
+  &:active {
+    box-shadow: 0 0 0 3px $bg-purple-rgba-sm;
+  }
+}
+
+.button-pink {
+  background: $bg-pink;
+  border-color: $bg-pink;
+  &:active {
+    box-shadow: 0 0 0 3px $bg-pink-rgba-sm;
+  }
+}
+
+.button-black {
+  border-color: $bg-black;
+  background: $bg-black;
+  &:active {
+    box-shadow: 0 0 0 3px $bg-black-rgba-sm;
+  }
+}
+
+// Ghost
+.button-ghost {
+  background: $bg-white;
+}
+
+.button-dark.button-ghost {
+  background: $bg-dark;
+}
+
+.button-ghost-blue {
+  border-color: $bg-blue;
+  *,
+  path {
+    color: $text-blue !important;
+  }
+  &:active {
+    box-shadow: 0 0 0 3px $bg-blue-rgba-sm;
+  }
+}
+
+.button-ghost-red {
+  border-color: $bg-red;
+  *,
+  path {
+    color: $text-red !important;
+  }
+  &:active {
+    box-shadow: 0 0 0 3px $bg-red-rgba-sm;
+  }
+}
+
+.button-ghost-green {
+  border-color: $bg-green;
+  *,
+  path {
+    color: $text-green !important;
+  }
+  &:active {
+    box-shadow: 0 0 0 3px $bg-green-rgba-sm;
+  }
+}
+
+.button-ghost-orange {
+  border-color: $bg-orange;
+  *,
+  path {
+    color: $text-orange !important;
+  }
+  &:active {
+    box-shadow: 0 0 0 3px $bg-orange-rgba-sm;
+  }
+}
+
+.button-ghost-yellow {
+  border-color: $bg-yellow;
+  *,
+  path {
+    color: $text-yellow !important;
+  }
+  &:active {
+    box-shadow: 0 0 0 3px $bg-yellow-rgba-sm;
+  }
+}
+
+.button-ghost-purple {
+  border-color: $bg-purple;
+  *,
+  path {
+    color: $text-purple !important;
+  }
+  &:active {
+    box-shadow: 0 0 0 3px $bg-purple-rgba-sm;
+  }
+}
+
+.button-ghost-pink {
+  border-color: $bg-pink;
+  *,
+  path {
+    color: $text-pink !important;
+  }
+  &:active {
+    box-shadow: 0 0 0 3px $bg-pink-rgba-sm;
+  }
+}
+
+.button-ghost-black {
+  border-color: $bg-black;
+  *,
+  path {
+    color: $text-black !important;
+  }
+  &:active {
+    box-shadow: 0 0 0 3px $bg-black-rgba-sm;
+  }
+}
+
+// Text
+.button-text {
+  border-color: transparent;
+  background: transparent;
+  color: $text-blue;
+  * {
+    color: $text-blue;
+  }
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+// Loading;
+.button-loading {
+  cursor: not-allowed;
+  user-select: none;
+  opacity: 0.5;
+  &:hover {
+    opacity: 0.5;
+  }
+  &:active {
+    box-shadow: unset;
+  }
+}
+
+// Disabled
+.button-disabled {
+  border-color: $bg-slate;
+  background: $bg-slate !important;
+  color: $text-gray;
+  user-select: none;
+  cursor: not-allowed;
+  * {
+    color: $text-gray;
+  }
+  &:active {
+    box-shadow: unset;
+  }
+}

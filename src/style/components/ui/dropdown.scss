@@ -1,0 +1,70 @@
+.dropdown {
+  width: max-content;
+  position: relative;
+  .dropdown-label {
+    padding: $p-1 - 0.5 0;
+    user-select: none;
+    cursor: pointer;
+  }
+  .dropdown-wrap {
+    min-width: max-content;
+    width: $w-10 * 1.5;
+    background: $bg-white;
+    box-shadow: 0 0 10px $bg-gray;
+    border-radius: $rounded;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    top: calc(100% - 5px);
+    z-index: 5;
+    transition: opacity $transition-time-xs $transition-fn, transform $transition-time-xs $transition-fn;
+    .wrap-item {
+      padding: $p-1 - 0.4 $p-2;
+      opacity: 0.6;
+      cursor: pointer;
+      transition: opacity $transition-time-sm $transition-fn, transform $transition-time-sm $transition-fn,
+        background-color $transition-time-sm $transition-fn;
+      &:hover {
+        opacity: 1;
+        background: $bg-slate;
+      }
+    }
+    .wrap-item-selected {
+      opacity: 1;
+    }
+  }
+  .dropdown-wrap-active {
+    transform: scaleY(1);
+    opacity: 1;
+    animation: dropdown $transition-time-xs $transition-fn;
+  }
+}
+
+// Placement
+.dropdown-left {
+  .dropdown-wrap {
+    left: 0;
+  }
+}
+
+.dropdown-right {
+  .dropdown-wrap {
+    right: 0;
+  }
+}
+
+// Theme
+.dropdown-white {
+  .dropdown-wrap {
+    background: $bg-white;
+  }
+}
+
+.dropdown-dark {
+  .dropdown-wrap {
+    background: $bg-dark;
+    box-shadow: 0 0 10px $bg-black;
+  }
+}
