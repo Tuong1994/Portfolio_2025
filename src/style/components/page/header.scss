@@ -5,8 +5,35 @@
   top: 0;
   left: 0;
   z-index: 100;
-  .header-menu {
-    
+}
+
+.header-setting {
+  position: relative;
+  .setting-dropdown {
+    width: $w-10 * 2;
+    padding: $p-1;
+    background: $bg-white;
+    border-radius: $rounded-md;
+    box-shadow: 0 0 3px $bg-gray;
+    position: absolute;
+    top: calc(100% + 1rem);
+    transform-origin: top;
+    transition: background $transition-time-sm $transition-fn, transform $transition-time-sm $transition-fn;
+  }
+}
+
+.header-theme,
+.header-mode,
+.header-locale {
+  margin: $m-1 0;
+}
+
+.portfolio-header-dark {
+  .header-setting {
+    .setting-dropdown {
+      background: $bg-dark;
+      box-shadow: 0 0 3px $bg-black;
+    }
   }
 }
 

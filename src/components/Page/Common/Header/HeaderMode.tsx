@@ -1,7 +1,7 @@
 import { forwardRef, ForwardRefRenderFunction } from "react";
 import { useLang } from "@/hooks";
 import { Select } from "@/components/Control";
-import { SelectOptions, SelectValue } from "@/components/Control/type";
+import { ControlColor, SelectOptions, SelectValue } from "@/components/Control/type";
 import { EMode } from "@/components/UI/Layout/Context";
 import useLayout from "@/components/UI/Layout/useLayout";
 import utils from "@/utils";
@@ -23,6 +23,7 @@ const HeaderMode: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
   return (
     <div ref={ref} className={className}>
       <Select
+        color={layoutValue.layoutColor as ControlColor}
         hasClear={false}
         hasSearch={false}
         defaultValue={layoutValue.layoutTheme}

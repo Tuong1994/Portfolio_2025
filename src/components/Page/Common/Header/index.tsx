@@ -4,6 +4,7 @@ import Logo from "../Logo";
 import HeaderMenu from "./HeaderMenu";
 import HeaderSetting from "./HeaderSetting";
 import useSticky from "./useSticky";
+import useLayout from "@/components/UI/Layout/useLayout";
 import utils from "@/utils";
 
 const { Head } = Layout;
@@ -15,11 +16,15 @@ interface HeaderProps {
 }
 
 const Header: ForwardRefRenderFunction<HTMLDivElement, HeaderProps> = ({ rootClassName = "" }, ref) => {
+  const { layoutValue } = useLayout();
+
   const sticky = useSticky();
 
   const stickyClassName = sticky ? "portfolio-header-sticky" : "";
 
-  const className = utils.formatClassName("portfolio-header", stickyClassName, rootClassName);
+  const themeClassName = `portfolio-header-${layoutValue.layoutTheme}`;
+
+  const className = utils.formatClassName("portfolio-header", themeClassName, stickyClassName, rootClassName);
 
   return (
     <Head ref={ref} rootClassName={className}>
