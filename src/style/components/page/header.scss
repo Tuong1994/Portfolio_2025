@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 40;
   .header-setting {
     position: relative;
     .setting-dropdown {
@@ -25,95 +25,8 @@
       animation: dropdown $transition-time-xs $transition-fn;
     }
   }
-  .header-theme,
-  .header-mode,
-  .header-locale {
-    margin: $m-1 0;
-  }
-  .header-theme {
-    .theme-item {
-      width: $w-full;
-      margin: $m-1 0;
-      padding: $p-1;
-      opacity: 0.5;
-      border-radius: $rounded;
-      color: $text-white;
-      text-align: center;
-      border: 1px solid $bg-white;
-      cursor: pointer;
-      transition: background-color $transition-time-sm $transition-fn,
-        box-shadow $transition-time-sm $transition-fn, opacity $transition-time-sm $transition-fn;
-    }
-    .theme-item-blue {
-      background: $bg-blue;
-      &:hover {
-        opacity: 1;
-      }
-      &-selected {
-        opacity: 1;
-        box-shadow: 0 0 0 3px $bg-blue-rgba-sm;
-      }
-    }
-    .theme-item-green {
-      background: $bg-green;
-      &:hover {
-        opacity: 1;
-      }
-      &-selected {
-        opacity: 1;
-        box-shadow: 0 0 0 3px $bg-green-rgba-sm;
-      }
-    }
-    .theme-item-red {
-      background: $bg-red;
-      &:hover {
-        opacity: 1;
-      }
-      &-selected {
-        opacity: 1;
-        box-shadow: 0 0 0 3px $bg-red-rgba-sm;
-      }
-    }
-    .theme-item-orange {
-      background: $bg-orange;
-      &:hover {
-        opacity: 1;
-      }
-      &-selected {
-        opacity: 1;
-        box-shadow: 0 0 0 3px $bg-orange-rgba-sm;
-      }
-    }
-    .theme-item-yellow {
-      background: $bg-yellow;
-      &:hover {
-        opacity: 1;
-      }
-      &-selected {
-        opacity: 1;
-        box-shadow: 0 0 0 3px $bg-yellow-rgba-sm;
-      }
-    }
-    .theme-item-purple {
-      background: $bg-purple;
-      &:hover {
-        opacity: 1;
-      }
-      &-selected {
-        opacity: 1;
-        box-shadow: 0 0 0 3px $bg-purple-rgba-sm;
-      }
-    }
-    .theme-item-pink {
-      background: $bg-pink;
-      &:hover {
-        opacity: 1;
-      }
-      &-selected {
-        opacity: 1;
-        box-shadow: 0 0 0 3px $bg-pink-rgba-sm;
-      }
-    }
+  @include respond(mdPhone) {
+    padding: $p-1;
   }
 }
 
@@ -128,6 +41,97 @@
   .header-theme {
     .theme-item {
       border-color: $bg-black;
+    }
+  }
+}
+
+.header-theme,
+.header-mode,
+.header-locale {
+  margin: $m-1 0;
+}
+.header-theme {
+  .theme-item {
+    width: $w-full;
+    margin: $m-1 0;
+    padding: $p-1;
+    opacity: 0.5;
+    border-radius: $rounded;
+    color: $text-white;
+    text-align: center;
+    border: 1px solid $bg-white;
+    cursor: pointer;
+    transition: background-color $transition-time-sm $transition-fn,
+      box-shadow $transition-time-sm $transition-fn, opacity $transition-time-sm $transition-fn;
+  }
+  .theme-item-blue {
+    background: $bg-blue;
+    &:hover {
+      opacity: 1;
+    }
+    &-selected {
+      opacity: 1;
+      box-shadow: 0 0 0 3px $bg-blue-rgba-sm;
+    }
+  }
+  .theme-item-green {
+    background: $bg-green;
+    &:hover {
+      opacity: 1;
+    }
+    &-selected {
+      opacity: 1;
+      box-shadow: 0 0 0 3px $bg-green-rgba-sm;
+    }
+  }
+  .theme-item-red {
+    background: $bg-red;
+    &:hover {
+      opacity: 1;
+    }
+    &-selected {
+      opacity: 1;
+      box-shadow: 0 0 0 3px $bg-red-rgba-sm;
+    }
+  }
+  .theme-item-orange {
+    background: $bg-orange;
+    &:hover {
+      opacity: 1;
+    }
+    &-selected {
+      opacity: 1;
+      box-shadow: 0 0 0 3px $bg-orange-rgba-sm;
+    }
+  }
+  .theme-item-yellow {
+    background: $bg-yellow;
+    &:hover {
+      opacity: 1;
+    }
+    &-selected {
+      opacity: 1;
+      box-shadow: 0 0 0 3px $bg-yellow-rgba-sm;
+    }
+  }
+  .theme-item-purple {
+    background: $bg-purple;
+    &:hover {
+      opacity: 1;
+    }
+    &-selected {
+      opacity: 1;
+      box-shadow: 0 0 0 3px $bg-purple-rgba-sm;
+    }
+  }
+  .theme-item-pink {
+    background: $bg-pink;
+    &:hover {
+      opacity: 1;
+    }
+    &-selected {
+      opacity: 1;
+      box-shadow: 0 0 0 3px $bg-pink-rgba-sm;
     }
   }
 }
