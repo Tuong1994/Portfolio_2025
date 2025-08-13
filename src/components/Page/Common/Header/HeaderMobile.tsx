@@ -1,6 +1,6 @@
 import { ForwardRefRenderFunction, forwardRef, useState } from "react";
 import { CiCircleList as ListIcon } from "react-icons/ci";
-import { Button, Drawer, AnchorScroll, Divider } from "@/components/UI";
+import { Button, Drawer, AnchorScroll, Divider, Space } from "@/components/UI";
 import HeaderLocale from "./HeaderLocale";
 import HeaderMode from "./HeaderMode";
 import HeaderTheme from "./HeaderTheme";
@@ -31,12 +31,15 @@ const HeaderMobile: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
 
   return (
     <div ref={ref} className={className}>
-      <Button color={layoutValue.layoutColor} onClick={handleTriggerOpen}>
-        <ListIcon />
-      </Button>
+      <Space justify="end">
+        <Button color={layoutValue.layoutColor} onClick={handleTriggerOpen}>
+          <ListIcon />
+        </Button>
+      </Space>
       <Drawer hasHead={false} open={open} onClose={handleTriggerOpen}>
         <Divider>Menu</Divider>
         {renderMenu()}
+        <Divider>Settings</Divider>
         <HeaderLocale />
         <HeaderMode />
         <HeaderTheme />

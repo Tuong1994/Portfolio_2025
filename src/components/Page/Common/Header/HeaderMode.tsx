@@ -30,13 +30,14 @@ const HeaderMode: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
       <FlexCol>
         <Paragraph strong>{lang.header.mode.title}</Paragraph>
       </FlexCol>
-      <FlexCol span={16}>
+      <FlexCol xs={14} lg={16} span={16}>
         <Select
           color={layoutValue.layoutColor as ControlColor}
           hasClear={false}
           hasSearch={false}
           defaultValue={layoutValue.layoutTheme}
           options={modeOptions}
+          style={{ fontSize: "13px" }}
           onChangeSelect={handleSelect}
         />
       </FlexCol>

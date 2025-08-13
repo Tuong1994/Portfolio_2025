@@ -1,6 +1,7 @@
 .portfolio-header {
   padding: $p-1 $p-5 * 4;
   height: auto;
+  box-shadow: unset;
   position: absolute;
   top: 0;
   left: 0;
@@ -25,9 +26,19 @@
       animation: dropdown $transition-time-xs $transition-fn;
     }
   }
+  @include respond(lgTablet) {
+    padding: $p-1 $p-3;
+  }
   @include respond(mdPhone) {
     padding: $p-1;
   }
+}
+
+// Sticky
+.portfolio-header-sticky {
+  position: fixed;
+  box-shadow: 0 2px 5px $bg-gray;
+  animation: sticky $transition-time-sm $transition-fn;
 }
 
 // Mode
@@ -45,6 +56,10 @@
   }
 }
 
+.portfolio-header-dark.portfolio-header-sticky {
+  box-shadow: 0 2px 5px $bg-black;
+}
+
 .header-theme,
 .header-mode,
 .header-locale {
@@ -54,7 +69,7 @@
   .theme-item {
     width: $w-full;
     margin: $m-1 0;
-    padding: $p-1;
+    padding: $p-1 - 0.2 $p-1;
     opacity: 0.5;
     border-radius: $rounded;
     color: $text-white;

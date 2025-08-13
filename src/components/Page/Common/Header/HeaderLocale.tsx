@@ -30,13 +30,14 @@ const HeaderLocale: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
       <FlexCol>
         <Paragraph strong>{lang.header.locale.title}</Paragraph>
       </FlexCol>
-      <FlexCol span={16}>
+      <FlexCol xs={14} lg={16} span={16}>
         <Select
           color={layoutValue.layoutColor as ControlColor}
           hasClear={false}
           hasSearch={false}
           defaultValue={locale}
           options={localeOptions}
+          style={{ fontSize: "13px" }}
           onChangeSelect={handleSelect}
         />
       </FlexCol>

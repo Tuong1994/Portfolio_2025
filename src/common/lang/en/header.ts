@@ -18,6 +18,13 @@ const header_en = {
   },
   theme: {
     title: "Themes",
+    blue: "Blue",
+    green: "Green",
+    red: "Red",
+    orange: "Orange",
+    yellow: "Yellow",
+    purple: "Purple",
+    pink: "Pink",
   },
 };
 

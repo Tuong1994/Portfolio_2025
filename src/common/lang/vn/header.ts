@@ -18,6 +18,13 @@ const header_vn = {
   },
   theme: {
     title: "Chủ đề",
+    blue: "Xanh dương",
+    green: "Xanh lá",
+    red: "Đỏ",
+    orange: "Cam",
+    yellow: "Vàng",
+    purple: "Tím",
+    pink: "Hồng",
   },
 };
 

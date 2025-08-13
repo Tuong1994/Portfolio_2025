@@ -1,7 +1,7 @@
-import { forwardRef, ForwardRefRenderFunction, useState } from "react";
+import { forwardRef, ForwardRefRenderFunction, useImperativeHandle, useRef, useState } from "react";
 import { Button, Space } from "@/components/UI";
 import { FaGears } from "react-icons/fa6";
-import { useRender } from "@/hooks";
+import { useClickOutside, useRender } from "@/hooks";
 import HeaderLocale from "./HeaderLocale";
 import HeaderMode from "./HeaderMode";
 import HeaderTheme from "./HeaderTheme";
@@ -10,6 +10,12 @@ import utils from "@/utils";
 
 const HeaderSetting: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
   const [dropdown, setDropdown] = useState<boolean>(false);
+
+  const settingRef = useRef<HTMLDivElement | null>(null)
+
+  useImperativeHandle(ref, () => settingRef.current as HTMLDivElement)
+
+  useClickOutside(settingRef, setDropdown)
 
   const { layoutValue } = useLayout();
 
@@ -24,7 +30,7 @@ const HeaderSetting: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) =>
   const handleTriggerDropdown = () => setDropdown(!dropdown);
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={settingRef} className={className}>
       <Space justify="end">
         <Button color={layoutValue.layoutColor} onClick={handleTriggerDropdown}>
           <FaGears />

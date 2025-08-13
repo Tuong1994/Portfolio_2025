@@ -38,16 +38,16 @@ const Header: ForwardRefRenderFunction<HTMLDivElement, HeaderProps> = ({ rootCla
   return (
     <Head ref={ref} rootClassName={className}>
       <FlexRow style={{ width: "100%" }} aligns="middle" justify="between">
-        <FlexCol xs={4} span={4}>
+        <FlexCol xs={4} md={4} lg={4} span={4}>
           <Logo />
         </FlexCol>
-        <FlexCol xs={0} span={16}>
+        <FlexCol xs={0} md={0} lg={16} span={16}>
           <HeaderMenu />
         </FlexCol>
-        <FlexCol xs={0} span={4}>
+        <FlexCol xs={0} md={0} lg={4} span={4}>
           <HeaderSetting />
         </FlexCol>
-        <FlexCol xs={4} span={0}>
+        <FlexCol xs={4} md={4} lg={0} span={0}>
           <HeaderMobile />
         </FlexCol>
       </FlexRow>

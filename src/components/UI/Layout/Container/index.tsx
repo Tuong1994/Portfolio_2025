@@ -11,7 +11,7 @@ export interface LayoutContainerProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const LayoutContainer: ForwardRefRenderFunction<HTMLDivElement, LayoutContainerProps> = (
-  { rootClassName = "", theme = EMode.LIGHT, color = "blue", children, ...restProps },
+  { rootClassName = "", theme = EMode.LIGHT, color = "purple", children, ...restProps },
   ref
 ) => {
   const { layoutApi, layoutValue } = useLayout();
@@ -20,7 +20,10 @@ const LayoutContainer: ForwardRefRenderFunction<HTMLDivElement, LayoutContainerP
 
   const className = utils.formatClassName("container", rootClassName);
 
-  useEffect(() => layoutApi.onSwitchTheme(theme), []);
+  useEffect(() => {
+    layoutApi.onSwitchTheme(theme)
+    layoutApi.onSwitchColor(color)
+  }, []);
 
   return (
     <LayoutContext.Provider value={initialValue}>

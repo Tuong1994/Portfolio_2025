@@ -21,9 +21,18 @@ const HeaderTheme: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
       const isSelected = layoutValue.layoutColor === color;
       const selectedClassName = isSelected ? `theme-item-${color}-selected` : "";
       const itemClassName = utils.formatClassName("theme-item", `theme-item-${color}`, selectedClassName);
+      const colorTitles: Record<string, string> = {
+        blue: lang.header.theme.blue,
+        green: lang.header.theme.green,
+        red: lang.header.theme.red,
+        orange: lang.header.theme.orange,
+        yellow: lang.header.theme.yellow,
+        purple: lang.header.theme.purple,
+        pink: lang.header.theme.pink,
+      };
       return (
         <div key={color} className={itemClassName} onClick={() => handleSelect(color)}>
-          {color}
+          {colorTitles[color]}
         </div>
       );
     });
