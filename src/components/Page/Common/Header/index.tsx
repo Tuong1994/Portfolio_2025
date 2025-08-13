@@ -16,16 +16,21 @@ interface HeaderProps {
   rootClassName?: string;
 }
 
-const Header: ForwardRefRenderFunction<HTMLDivElement, HeaderProps> = ({ rootClassName = "" }, ref) => {
+const Header: ForwardRefRenderFunction<HTMLDivElement, HeaderProps> = (
+  { rootClassName = "", },
+  ref
+) => {
   const { layoutValue } = useLayout();
+
+  const { layoutColor, layoutTheme } = layoutValue;
 
   const sticky = useSticky();
 
   const stickyClassName = sticky ? "portfolio-header-sticky" : "";
 
-  const themeClassName = `portfolio-header-${layoutValue.layoutTheme}`;
+  const themeClassName = `portfolio-header-${layoutTheme}`;
 
-  const colorClassName = `portfolio-header-${layoutValue.layoutColor}`;
+  const colorClassName = `portfolio-header-${layoutColor}`;
 
   const className = utils.formatClassName(
     "portfolio-header",

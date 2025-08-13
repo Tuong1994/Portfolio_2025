@@ -5,6 +5,18 @@
   padding: $p-5 $p-5 * 4;
   padding-top: $p-5 + 3;
   position: relative;
+  &::after,
+  &::before {
+    content: "";
+    width: $w-full;
+    height: $h-10;
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    z-index: 2;
+    filter: blur(30px);
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.5));
+  }
   .intro-avatar {
     .avatar-wrapper {
       width: $w-10 * 3;

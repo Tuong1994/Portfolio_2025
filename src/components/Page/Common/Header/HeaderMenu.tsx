@@ -9,13 +9,15 @@ const { Anchor } = AnchorScroll;
 const HeaderMenu: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
   const { layoutValue } = useLayout();
 
+  const { layoutColor } = layoutValue;
+
   const menus = useMenu();
 
   const className = utils.formatClassName("header-menu");
 
   const renderMenu = () => {
     return menus.map((menu) => (
-      <Anchor key={menu.id} id={menu.id} linkColor={layoutValue.layoutColor}>
+      <Anchor key={menu.id} id={menu.id} linkColor={layoutColor}>
         {menu.title}
       </Anchor>
     ));

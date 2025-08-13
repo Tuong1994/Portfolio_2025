@@ -16,6 +16,8 @@ const HeaderMode: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
 
   const { layoutValue, layoutApi } = useLayout();
 
+  const { layoutColor, layoutTheme } = layoutValue;
+
   const modeOptions: SelectOptions = [
     { label: lang.header.mode.light, value: EMode.LIGHT },
     { label: lang.header.mode.dark, value: EMode.DARK },
@@ -32,10 +34,10 @@ const HeaderMode: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
       </FlexCol>
       <FlexCol xs={14} lg={16} span={16}>
         <Select
-          color={layoutValue.layoutColor as ControlColor}
+          color={layoutColor as ControlColor}
           hasClear={false}
           hasSearch={false}
-          defaultValue={layoutValue.layoutTheme}
+          defaultValue={layoutTheme}
           options={modeOptions}
           style={{ fontSize: "13px" }}
           onChangeSelect={handleSelect}

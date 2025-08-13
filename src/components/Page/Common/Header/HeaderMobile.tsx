@@ -15,6 +15,8 @@ const HeaderMobile: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
 
   const { layoutValue } = useLayout();
 
+  const { layoutColor } = layoutValue;
+
   const menus = useMenu();
 
   const className = utils.formatClassName("header-mobile");
@@ -32,7 +34,7 @@ const HeaderMobile: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
   return (
     <div ref={ref} className={className}>
       <Space justify="end">
-        <Button color={layoutValue.layoutColor} onClick={handleTriggerOpen}>
+        <Button color={layoutColor} onClick={handleTriggerOpen}>
           <ListIcon />
         </Button>
       </Space>

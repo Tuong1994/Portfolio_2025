@@ -24,6 +24,8 @@ const BgParticles: FC = () => {
 
   const { layoutValue } = useLayout();
 
+  const { layoutTheme } = layoutValue;
+
   // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -40,7 +42,7 @@ const BgParticles: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (layoutValue.layoutTheme === EMode.LIGHT) {
+    if (layoutTheme === EMode.LIGHT) {
       setParticlesTheme((prev) => ({
         ...prev,
         background: "#fff",
@@ -55,7 +57,7 @@ const BgParticles: FC = () => {
         linkColor: "#fff",
       }));
     }
-  }, [layoutValue.layoutTheme]);
+  }, [layoutTheme]);
 
   const options: ISourceOptions = useMemo(
     () => ({

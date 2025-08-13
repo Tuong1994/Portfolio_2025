@@ -10,6 +10,8 @@ const HeaderTheme: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
 
   const { layoutValue, layoutApi } = useLayout();
 
+  const { layoutColor } = layoutValue;
+
   const colors: LayoutColor[] = ["blue", "green", "red", "orange", "yellow", "pink", "purple"];
 
   const className = utils.formatClassName("header-theme");
@@ -18,7 +20,7 @@ const HeaderTheme: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
 
   const renderTheme = () => {
     return colors.map((color) => {
-      const isSelected = layoutValue.layoutColor === color;
+      const isSelected = layoutColor === color;
       const selectedClassName = isSelected ? `theme-item-${color}-selected` : "";
       const itemClassName = utils.formatClassName("theme-item", `theme-item-${color}`, selectedClassName);
       const colorTitles: Record<string, string> = {

@@ -11,13 +11,15 @@ import utils from "@/utils";
 const HeaderSetting: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
   const [dropdown, setDropdown] = useState<boolean>(false);
 
-  const settingRef = useRef<HTMLDivElement | null>(null)
+  const settingRef = useRef<HTMLDivElement | null>(null);
 
-  useImperativeHandle(ref, () => settingRef.current as HTMLDivElement)
+  useImperativeHandle(ref, () => settingRef.current as HTMLDivElement);
 
-  useClickOutside(settingRef, setDropdown)
+  useClickOutside(settingRef, setDropdown);
 
   const { layoutValue } = useLayout();
+
+  const { layoutColor } = layoutValue;
 
   const render = useRender(dropdown);
 
@@ -32,7 +34,7 @@ const HeaderSetting: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) =>
   return (
     <div ref={settingRef} className={className}>
       <Space justify="end">
-        <Button color={layoutValue.layoutColor} onClick={handleTriggerDropdown}>
+        <Button color={layoutColor} onClick={handleTriggerDropdown}>
           <FaGears />
         </Button>
       </Space>
