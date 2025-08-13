@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const useSticky = () => {
+const useSticky = (y = 80) => {
   const [sticky, setSticky] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      if (scrollY > 150) setSticky(true);
+      if (scrollY > y) setSticky(true);
       else setSticky(false);
     };
     window.addEventListener("scroll", handleScroll);

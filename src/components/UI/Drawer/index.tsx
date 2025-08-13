@@ -3,6 +3,7 @@ import { HiXMark } from "react-icons/hi2";
 import { useOverflow, useRender } from "@/hooks";
 import Portal from "@/components/Portal";
 import utils from "@/utils";
+import useLayout from "../Layout/useLayout";
 
 export interface DrawerProps {
   rootClassName?: string;
@@ -36,9 +37,13 @@ const Drawer: ForwardRefRenderFunction<HTMLDivElement, DrawerProps> = (
   },
   ref
 ) => {
+  const { layoutValue } = useLayout();
+
   const render = useRender(open);
 
   useOverflow(open);
+
+  const themeClassName = `drawer-${layoutValue.layoutTheme}`
 
   const backdropActiveClassName = open ? "drawer-backdrop-active" : "";
 
@@ -58,6 +63,7 @@ const Drawer: ForwardRefRenderFunction<HTMLDivElement, DrawerProps> = (
     "drawer",
     drawerFullClassName,
     drawerActiveClassName,
+    themeClassName,
     rootClassName
   );
 

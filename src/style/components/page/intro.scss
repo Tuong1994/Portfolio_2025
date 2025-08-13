@@ -1,0 +1,9 @@
+.intro {
+  height: $h-screen;
+  padding: $p-5 $p-5 * 4;
+  padding-top: $p-5 + 3;
+  @include respond(mdPhone) {
+    padding: $p-5 $p-1;
+    padding-top: $p-5 + 3;
+  }
+}

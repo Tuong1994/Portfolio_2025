@@ -1,6 +1,7 @@
 .portfolio-header {
   padding: $p-1 $p-5 * 4;
   height: auto;
+  background: transparent;
   box-shadow: unset;
   position: absolute;
   top: 0;
@@ -37,6 +38,7 @@
 // Sticky
 .portfolio-header-sticky {
   position: fixed;
+  background: $bg-white;
   box-shadow: 0 2px 5px $bg-gray;
   animation: sticky $transition-time-sm $transition-fn;
 }
@@ -46,7 +48,7 @@
   .header-setting {
     .setting-dropdown {
       background: $bg-dark;
-      box-shadow: 0 0 3px $bg-black;
+      box-shadow: 0 0 5px $bg-black;
     }
   }
   .header-theme {
@@ -57,6 +59,7 @@
 }
 
 .portfolio-header-dark.portfolio-header-sticky {
+  background: $bg-dark;
   box-shadow: 0 2px 5px $bg-black;
 }
 
