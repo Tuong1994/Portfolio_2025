@@ -11,17 +11,21 @@ const { FlexRow, FlexCol } = Flex;
 const Intro: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
   const { layoutValue } = useLayout();
 
-  const colorClassName = `intro-${layoutValue.layoutColor}`;
+  const { layoutColor, layoutTheme } = layoutValue;
 
-  const className = utils.formatClassName("intro", colorClassName);
+  const colorClassName = `intro-${layoutColor}`;
+
+  const themeClassName = `intro-${layoutTheme}`;
+
+  const className = utils.formatClassName("intro", colorClassName, themeClassName);
 
   return (
     <section ref={ref} className={className}>
       <FlexRow justify="between">
-        <FlexCol span={8}>
+        <FlexCol xs={24} md={9} lg={8} span={8}>
           <IntroAvatar />
         </FlexCol>
-        <FlexCol span={15}>
+        <FlexCol xs={24} md={14} lg={15} span={15}>
           <IntroContent />
         </FlexCol>
       </FlexRow>

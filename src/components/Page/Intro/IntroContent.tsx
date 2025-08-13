@@ -15,6 +15,8 @@ const IntroContent: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
 
   const { layoutValue } = useLayout();
 
+  const { layoutColor } = layoutValue;
+
   const texts = useMemo<string[]>(
     () => ["Frontend Developer", "Backend Developer", "Fullstack Developer"],
     []
@@ -25,18 +27,22 @@ const IntroContent: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
   return (
     <div ref={ref} className={className}>
       <Space>
-        <Paragraph size={30}>{lang.intro.greeting}</Paragraph>
-        <Paragraph strong size={35} rootClassName="content-name">
+        <Paragraph rootClassName="content-greeting">{lang.intro.greeting}</Paragraph>
+        <Paragraph strong rootClassName="content-name">
           Jack
         </Paragraph>
       </Space>
-      <Paragraph size={25} lineHeight={40} aligns="justify" rootClassName="content-text">
+      <Paragraph lineHeight={40} aligns="justify" rootClassName="content-text">
         {lang.intro.content}
       </Paragraph>
-      <TypingText textList={texts} textColor={layoutValue.layoutColor as TypingTextColor} />
+      <TypingText
+        textList={texts}
+        textColor={layoutColor as TypingTextColor}
+        rootClassName="content-typing"
+      />
       <Divider />
-      <Button color={layoutValue.layoutColor}>
-        <Anchor linkColor={layoutValue.layoutColor} id={anchorId.ABOUT}>
+      <Button color={layoutColor}>
+        <Anchor linkColor={layoutColor} id={anchorId.ABOUT}>
           {lang.header.menu.about}
         </Anchor>
       </Button>

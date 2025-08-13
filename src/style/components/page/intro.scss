@@ -5,10 +5,6 @@
   padding: $p-5 $p-5 * 4;
   padding-top: $p-5 + 3;
   position: relative;
-  @include respond(mdPhone) {
-    padding: $p-5 $p-1;
-    padding-top: $p-5 + 3;
-  }
   .intro-avatar {
     .avatar-wrapper {
       width: $w-10 * 3;
@@ -33,6 +29,11 @@
         left: -2rem;
         z-index: -1;
         animation: clockwise 3s linear infinite;
+        transition: background-color $transition-time-sm $transition-fn;
+        @include respond(lgTablet) {
+          width: $w-10 * 1.5;
+          height: $h-10 * 2;
+        }
       }
       .wrapper-dots {
         width: $w-1 * 7;
@@ -48,20 +49,50 @@
           height: $h-1;
           background: $bg-dark;
           border-radius: $rounded-full;
+          transition: background-color $transition-time-sm $transition-fn;
         }
       }
+      @include respond(lgTablet) {
+        width: $w-10 * 2;
+        height: $h-10 * 3;
+      }
+    }
+    @include respond(lgTablet) {
+      display: flex;
+      justify-content: center;
     }
   }
   .intro-content {
+    .content-greeting {
+      font-size: $text-4xl !important;
+      @include respond(mdPhone) {
+        font-size: $text-xl;
+      }
+    }
     .content-name {
       font-family: "Exo", sans-serif;
+      font-size: $text-xxl + 1rem !important;
       transition: color $transition-time-sm $transition-fn;
     }
     .content-text {
+      font-size: $text-3xl !important;
       margin: $m-2 0;
+      @include respond(mdPhone) {
+        font-size: $text-lg;
+      }
+      .content-typing {
+        .typing-text-content {
+          @include respond(mdPhone) {
+            font-size: $text-xxl + 1rem !important;
+          }
+        }
+      }
+    }
+    @include respond(lgTablet) {
+      margin: $m-3 0;
     }
   }
-  .info-arrow {
+  .intro-arrow {
     position: absolute;
     left: 50%;
     bottom: 10rem;
@@ -87,6 +118,7 @@
       height: 100%;
       width: 50%;
       background: $bg-black;
+      transition: background-color $transition-time-sm $transition-fn;
     }
     .arrow-chevron:before {
       left: 0;
@@ -96,6 +128,143 @@
       right: 0;
       width: 50%;
       transform: skewY(-30deg);
+    }
+    @include respond(lgTablet) {
+      bottom: 5rem;
+    }
+  }
+  @include respond(laptop) {
+    padding: $p-5 $p-1 * 4;
+    padding-top: $p-5 + 5;
+  }
+  @include respond(mdTablet) {
+    height: auto;
+    padding: $p-5 $p-1;
+    padding-top: $p-5 + 5;
+  }
+}
+
+// Mode
+.intro-dark {
+  .intro-avatar {
+    .avatar-wrapper {
+      .wrapper-dots {
+        .dots-item {
+          background: $bg-white;
+        }
+      }
+    }
+  }
+  .intro-arrow {
+    .arrow-chevron:before,
+    .arrow-chevron:after {
+      background: $bg-white;
+    }
+  }
+}
+
+// Theme
+.intro-blue {
+  .intro-avatar {
+    .avatar-wrapper {
+      .wrapper-layer {
+        background: $bg-blue-rgba-sm;
+      }
+    }
+  }
+  .intro-content {
+    .content-name {
+      color: $text-blue;
+    }
+  }
+}
+
+.intro-red {
+  .intro-avatar {
+    .avatar-wrapper {
+      .wrapper-layer {
+        background: $bg-red-rgba-sm;
+      }
+    }
+  }
+  .intro-content {
+    .content-name {
+      color: $text-red;
+    }
+  }
+}
+
+.intro-green {
+  .intro-avatar {
+    .avatar-wrapper {
+      .wrapper-layer {
+        background: $bg-green-rgba-sm;
+      }
+    }
+  }
+  .intro-content {
+    .content-name {
+      color: $text-green;
+    }
+  }
+}
+
+.intro-orange {
+  .intro-avatar {
+    .avatar-wrapper {
+      .wrapper-layer {
+        background: $bg-orange-rgba-sm;
+      }
+    }
+  }
+  .intro-content {
+    .content-name {
+      color: $text-orange;
+    }
+  }
+}
+
+.intro-yellow {
+  .intro-avatar {
+    .avatar-wrapper {
+      .wrapper-layer {
+        background: $bg-yellow-rgba-sm;
+      }
+    }
+  }
+  .intro-content {
+    .content-name {
+      color: $text-yellow;
+    }
+  }
+}
+
+.intro-purple {
+  .intro-avatar {
+    .avatar-wrapper {
+      .wrapper-layer {
+        background: $bg-purple-rgba-sm;
+      }
+    }
+  }
+  .intro-content {
+    .content-name {
+      color: $text-purple;
+    }
+  }
+}
+
+.intro-pink {
+  .intro-avatar {
+    .avatar-wrapper {
+      .wrapper-layer {
+        background: $bg-pink-rgba-sm;
+      }
+    }
+  }
+  .intro-content {
+    .content-name {
+      color: $text-pink;
     }
   }
 }

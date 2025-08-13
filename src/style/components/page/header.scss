@@ -27,6 +27,9 @@
       animation: dropdown $transition-time-xs $transition-fn;
     }
   }
+  @include respond(laptop) {
+    padding: $p-1 $p-1 * 4;
+  }
   @include respond(lgTablet) {
     padding: $p-1 $p-3;
   }
