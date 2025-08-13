@@ -1,5 +1,7 @@
 .intro {
   height: $h-screen;
+  display: flex;
+  align-items: center;
   padding: $p-5 $p-5 * 4;
   padding-top: $p-5 + 3;
   @include respond(mdPhone) {
