@@ -1,0 +1,82 @@
+.about {
+  .about-info {
+    .info-card {
+      margin-bottom: $m-2;
+      padding: $p-2;
+      border-radius: $rounded-lg;
+      box-shadow: 0 0 10px $bg-black-rgba-xs;
+      color: $text-white;
+      transition: background-color $transition-time-sm $transition-fn,
+        box-shadow $transition-time-sm $transition-fn;
+      & * {
+        color: $text-white;
+      }
+    }
+  }
+}
+
+// Mode
+.about-dark {
+  .about-info {
+    .info-card {
+      box-shadow: 0 0 10px $bg-black;
+    }
+  }
+}
+
+// Theme
+.about-blue {
+  .about-info {
+    .info-card {
+      background: $bg-blue;
+    }
+  }
+}
+
+.about-green {
+  .about-info {
+    .info-card {
+      background: $bg-green;
+    }
+  }
+}
+
+.about-red {
+  .about-info {
+    .info-card {
+      background: $bg-red;
+    }
+  }
+}
+
+.about-orange {
+  .about-info {
+    .info-card {
+      background: $bg-orange;
+    }
+  }
+}
+
+.about-yellow {
+  .about-info {
+    .info-card {
+      background: $bg-yellow;
+    }
+  }
+}
+
+.about-purple {
+  .about-info {
+    .info-card {
+      background: $bg-purple;
+    }
+  }
+}
+
+.about-pink {
+  .about-info {
+    .info-card {
+      background: $bg-pink;
+    }
+  }
+}

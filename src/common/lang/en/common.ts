@@ -19,6 +19,7 @@ const common_en = {
       city: "City/Province",
       district: "District",
       ward: "Ward",
+      location: "Location",
       note: "Note",
       status: "Status",
       optional: "Optional",

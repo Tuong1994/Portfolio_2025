@@ -19,6 +19,7 @@ const common_vn = {
       city: "Thành phố/Tỉnh",
       district: "Quận/Huyện",
       ward: "Phường/Xã",
+      location: "Địa điểm",
       note: "Ghi chú",
       status: "Trạng thái",
       optional: "Không bắt buộc",
