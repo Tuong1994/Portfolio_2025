@@ -6,6 +6,7 @@ import SectionWrapper from "../Common/SectionWrapper";
 import SectionTitle from "../Common/SectionWrapper/SectionTitle";
 import AboutContent from "./AboutContent";
 import AboutInfo from "./AboutInfo";
+import AboutSkills from "./AboutSkills";
 import useLayout from "@/components/UI/Layout/useLayout";
 import utils from "@/utils";
 
@@ -40,6 +41,7 @@ const About: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
             <AboutInfo />
           </FlexCol>
         </FlexRow>
+        <AboutSkills />
       </SectionWrapper>
     </AnchorSection>
   );

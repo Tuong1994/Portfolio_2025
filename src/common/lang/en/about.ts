@@ -14,6 +14,7 @@ const about_en = {
   skills: {
     title: "My top skills",
   },
+  download: "Download CV",
 };
 
 export default about_en;

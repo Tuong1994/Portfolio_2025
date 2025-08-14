@@ -14,6 +14,7 @@ const about_vn = {
   skills: {
     title: "Kỹ năng hàng đầu của tôi",
   },
+  download: "Tải CV",
 };
 
 export default about_vn;

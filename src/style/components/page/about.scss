@@ -13,6 +13,36 @@
       }
     }
   }
+  .about-skills {
+    margin-top: $m-5;
+    .skills-item {
+      &:hover .item-image .image {
+        transform: scale(0.7);
+      }
+      .item-image {
+        width: $w-5;
+        height: $h-5;
+        border-radius: $rounded;
+        border: 3px solid $bg-dark;
+        background: $bg-white;
+        overflow: hidden;
+        transition: border-color $transition-time-sm $transition-fn;
+        .image {
+          transform: scale(0.5);
+        }
+      }
+      .item-name {
+        width: calc($w-full - $w-6);
+        padding: $p-1 - 0.6 $p-1;
+        color: $text-white;
+        border-radius: $rounded-md;
+        transition: background-color $transition-time-sm $transition-fn;
+        & * {
+          color: $text-white;
+        }
+      }
+    }
+  }
 }
 
 // Mode
@@ -20,6 +50,18 @@
   .about-info {
     .info-card {
       box-shadow: 0 0 10px $bg-black;
+    }
+  }
+  .about-skills {
+    .skills-item {
+      .item-image {
+        border-color: $bg-white;
+      }
+    }
+  }
+  svg {
+    path {
+      color: $text-white;
     }
   }
 }
@@ -31,12 +73,26 @@
       background: $bg-blue;
     }
   }
+  .about-skills {
+    .skills-item {
+      .item-name {
+        background: $bg-blue;
+      }
+    }
+  }
 }
 
 .about-green {
   .about-info {
     .info-card {
       background: $bg-green;
+    }
+  }
+  .about-skills {
+    .skills-item {
+      .item-name {
+        background: $bg-green;
+      }
     }
   }
 }
@@ -47,12 +103,26 @@
       background: $bg-red;
     }
   }
+  .about-skills {
+    .skills-item {
+      .item-name {
+        background: $bg-red;
+      }
+    }
+  }
 }
 
 .about-orange {
   .about-info {
     .info-card {
       background: $bg-orange;
+    }
+  }
+  .about-skills {
+    .skills-item {
+      .item-name {
+        background: $bg-orange;
+      }
     }
   }
 }
@@ -63,6 +133,13 @@
       background: $bg-yellow;
     }
   }
+  .about-skills {
+    .skills-item {
+      .item-name {
+        background: $bg-yellow;
+      }
+    }
+  }
 }
 
 .about-purple {
@@ -71,12 +148,26 @@
       background: $bg-purple;
     }
   }
+  .about-skills {
+    .skills-item {
+      .item-name {
+        background: $bg-purple;
+      }
+    }
+  }
 }
 
 .about-pink {
   .about-info {
     .info-card {
       background: $bg-pink;
+    }
+  }
+  .about-skills {
+    .skills-item {
+      .item-name {
+        background: $bg-pink;
+      }
     }
   }
 }
