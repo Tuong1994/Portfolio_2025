@@ -1,3 +1,59 @@
+.experiences {
+  .experiences-work {
+    .work-company {
+      transition: color $transition-time-sm $transition-fn;
+    }
+  }
+}
+
+.experiences-blue {
+  .experiences-work {
+    .work-company {
+      color: $text-blue;
+    }
+  }
+}
+
+.experiences-green {
+  .experiences-work {
+    .work-company {
+      color: $text-green;
+    }
+  }
+}
+
+.experiences-red {
+  .experiences-work {
+    .work-company {
+      color: $text-red;
+    }
+  }
+}
+
+.experiences-orange {
+  .experiences-work {
+    .work-company {
+      color: $text-orange;
+    }
+  }
+}
+
+.experiences-yellow {
+  .experiences-work {
+    .work-company {
+      color: $text-yellow;
+    }
+  }
+}
+
+.experiences-pink {
+  .experiences-work {
+    .work-company {
+      color: $text-pink;
+    }
+  }
+}
+
 .experiences-purple {
   .experiences-work {
     .work-company {
