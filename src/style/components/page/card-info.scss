@@ -1,0 +1,35 @@
+.card-info {
+  border-top-right-radius: $rounded-md;
+  border-bottom-left-radius: $rounded-md;
+  border-top-left-radius: $rounded-lg + 1;
+  border-bottom-right-radius: $rounded-lg + 1;
+  box-shadow: 0 0 10px $bg-black-rgba-xs;
+  overflow: hidden;
+  transition: box-shadow $transition-time-sm $transition-fn;
+  .card-body {
+    border: unset;
+    border-radius: unset;
+  }
+  .info-head {
+    padding: $p-1;
+    margin-bottom: $m-2;
+    background: $bg-dark;
+    border-radius: $rounded;
+    color: $text-white;
+    transition: background-color $transition-time-sm $transition-fn;
+    & * {
+      color: $text-white;
+    }
+  }
+}
+
+.card-info-dark {
+  box-shadow: 0 0 10px $bg-black;
+  .info-head {
+    background: $bg-white;
+    color: $text-black;
+    & * {
+      color: $text-black;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.fog-overlay {
+  width: $w-full;
+  height: $h-5;
+  background: $bg-white;
+  box-shadow: 0 10px 30px 40px $bg-white;
+  position: absolute;
+  z-index: 2;
+  transform: background-color $transition-time-sm $transition-fn,
+    box-shadow $transition-time-sm $transition-fn;
+}
+
+.fog-overlay-dark {
+  background: $bg-dark;
+  box-shadow: 0 10px 30px 40px $bg-dark;
+}

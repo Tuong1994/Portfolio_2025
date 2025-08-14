@@ -1,0 +1,67 @@
+.section-wrapper {
+  padding: $p-5 $p-5 * 4;
+  background: $bg-white;
+  transition: background-color $transition-time-sm $transition-fn;
+  @include respond(laptop) {
+    padding: $p-5 $p-1 * 4;
+  }
+  @include respond(lgTablet) {
+    padding: $p-5 $p-3;
+  }
+  @include respond(mdPhone) {
+    padding: $p-5 $p-1;
+  }
+}
+
+.section-wrapper-dark {
+  background: $bg-dark;
+}
+
+// Section Title
+.section-title {
+  .title-content {
+    transition: color $transition-time-sm $transition-fn;
+  }
+}
+
+.section-title-blue {
+  .title-content {
+    color: $text-blue;
+  }
+}
+
+.section-title-green {
+  .title-content {
+    color: $text-green;
+  }
+}
+
+.section-title-red {
+  .title-content {
+    color: $text-red;
+  }
+}
+
+.section-title-orange {
+  .title-content {
+    color: $text-orange;
+  }
+}
+
+.section-title-yellow {
+  .title-content {
+    color: $text-yellow;
+  }
+}
+
+.section-title-pink {
+  .title-content {
+    color: $text-pink;
+  }
+}
+
+.section-title-purple {
+  .title-content {
+    color: $text-purple;
+  }
+}

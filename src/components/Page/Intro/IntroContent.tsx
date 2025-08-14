@@ -32,7 +32,7 @@ const IntroContent: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
           Jack
         </Paragraph>
       </Space>
-      <Paragraph lineHeight={40} aligns="justify" rootClassName="content-text">
+      <Paragraph lineHeight={35} variant="secondary" aligns="justify" rootClassName="content-text">
         {lang.intro.content}
       </Paragraph>
       <TypingText
