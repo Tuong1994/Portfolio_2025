@@ -27,13 +27,13 @@ const AboutContent: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
           </Paragraph>
         </Space>
       </Divider>
-      <CardInfo head={<Paragraph size={20}>CYBERSOFT ACADEMY (2020 - 2021)</Paragraph>}>
+      <CardInfo head={<Paragraph size={18}>CYBERSOFT ACADEMY (2020 - 2021)</Paragraph>}>
         <List icon={<FaBookmark />}>
           <ListItem>
-            <Paragraph size={18}>Bootcamp Front End Web Developer</Paragraph>
+            <Paragraph size={16}>Bootcamp Front End Web Developer</Paragraph>
           </ListItem>
           <ListItem>
-            <Paragraph size={18}>Back End Developer - NodeJS</Paragraph>
+            <Paragraph size={16}>Back End Developer - NodeJS</Paragraph>
           </ListItem>
         </List>
       </CardInfo>

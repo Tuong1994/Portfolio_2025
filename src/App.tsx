@@ -5,7 +5,8 @@ import BgSection from "./components/Page/Common/BgSection";
 import FogOverlay from "./components/Page/Common/FogOverlay";
 import Intro from "./components/Page/Intro";
 import About from "./components/Page/About";
-import bgVector from '/bg-vector.jpg'
+import Experiences from "./components/Page/Experiences";
+import bgVector from "/bg-vector.jpg";
 import "./style/main.scss";
 
 const { Layout } = UI;
@@ -23,6 +24,7 @@ function App() {
       <FogOverlay />
       <BgSection bgURL={bgVector} />
       <About />
+      <Experiences />
     </Container>
   );
 }

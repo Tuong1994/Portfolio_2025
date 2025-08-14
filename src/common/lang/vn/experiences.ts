@@ -1,8 +1,11 @@
 const experiences_vn = {
   firstCompany: {
-    content_1: "Dựa vào thiết kế, tạo giao diện người dùng",
-    content_2: "Thảo luận với nhóm phát triển sản phẩm để nắm rõ luồng hoạt động của các tính năng mới",
-    content_3: "Phát triển, bảo trì, cập nhật những chức năng của ứng dụng theo yêu cầu của quản lý",
+    jobDesc: {
+      title: "Mô tả công việc",
+      content_1: "Dựa vào thiết kế, tạo giao diện người dùng",
+      content_2: "Thảo luận với nhóm phát triển sản phẩm để nắm rõ luồng hoạt động của các tính năng mới",
+      content_3: "Phát triển, bảo trì, cập nhật những chức năng của ứng dụng theo yêu cầu của quản lý",
+    },
     project: {
       title: "Các chức năng tham gia",
       name_1: "Admin control panel",

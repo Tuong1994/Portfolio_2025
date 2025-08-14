@@ -6,18 +6,22 @@ import utils from "@/utils";
 const { Paragraph } = Typography;
 
 interface CardInfoProps {
+  rootClassName?: string;
   head?: ReactNode;
   children?: ReactNode;
 }
 
-const CardInfo: ForwardRefRenderFunction<HTMLDivElement, CardInfoProps> = ({ head, children }, ref) => {
+const CardInfo: ForwardRefRenderFunction<HTMLDivElement, CardInfoProps> = (
+  { rootClassName = "", head, children },
+  ref
+) => {
   const { layoutValue } = useLayout();
 
   const { layoutTheme } = layoutValue;
 
   const themeClassName = `card-info-${layoutTheme}`;
 
-  const className = utils.formatClassName("card-info", themeClassName);
+  const className = utils.formatClassName("card-info", themeClassName, rootClassName);
 
   return (
     <Card ref={ref} rootClassName={className}>
