@@ -1,10 +1,10 @@
 import { forwardRef, ForwardRefRenderFunction, Fragment, useMemo } from "react";
 import { Divider, Typography, Button, Space } from "@/components/UI";
+import { FaCalendar, FaEnvelope, FaMapMarker, FaPhone } from "react-icons/fa";
 import { useLang } from "@/hooks";
 import { ELang } from "@/common/enum";
 import useLayout from "@/components/UI/Layout/useLayout";
 import utils from "@/utils";
-import { FaCalendar, FaEnvelope, FaMapMarker, FaPhone, FaPhoneSquare } from "react-icons/fa";
 
 const { Paragraph } = Typography;
 
@@ -26,7 +26,7 @@ const AboutInfo: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
       {
         id: "phone",
         label: lang.common.form.label.phone,
-        icon: <FaPhoneSquare />,
+        icon: <FaPhone />,
         content: "(+84) 079 322 9970",
       },
       {
