@@ -1,11 +1,13 @@
 import { forwardRef, ForwardRefRenderFunction } from "react";
+import { Divider, Space, Typography, UList } from "@/components/UI";
 import { useLang } from "@/hooks";
-import { Divider, Space, Typography } from "@/components/UI";
 import { FaGraduationCap } from "react-icons/fa";
 import CardInfo from "../Common/CardInfo";
 import utils from "@/utils";
 
 const { Paragraph } = Typography;
+
+const { List, ListItem } = UList;
 
 const AboutContent: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
   const { lang } = useLang();
@@ -14,7 +16,7 @@ const AboutContent: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
 
   return (
     <div ref={ref} className={className}>
-      <Paragraph size={20}>{lang.about.content}</Paragraph>
+      <Paragraph size={20} rootClassName="content-space">{lang.about.content}</Paragraph>
       <Divider>
         <Space aligns="middle">
           <FaGraduationCap />
@@ -23,7 +25,16 @@ const AboutContent: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
           </Paragraph>
         </Space>
       </Divider>
-      <CardInfo head={<Paragraph size={18}>CYBERSOFT ACADEMY (2020 - 2021)</Paragraph>}></CardInfo>
+      <CardInfo head={<Paragraph size={20}>CYBERSOFT ACADEMY (2020 - 2021)</Paragraph>}>
+        <List>
+          <ListItem>
+            <Paragraph size={18}>Bootcamp Front End Web Developer</Paragraph>
+          </ListItem>
+          <ListItem>
+            <Paragraph size={18}>Back End Developer - NodeJS</Paragraph>
+          </ListItem>
+        </List>
+      </CardInfo>
     </div>
   );
 };
