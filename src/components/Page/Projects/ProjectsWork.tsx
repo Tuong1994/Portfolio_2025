@@ -1,15 +1,19 @@
 import { forwardRef, ForwardRefRenderFunction, useMemo } from "react";
-import { Divider, InfoRow, Space, Tooltip, Typography } from "@/components/UI";
+import { Divider, InfoRow, Space, Tooltip, Typography, Flex } from "@/components/UI";
 import { InfoRowProps } from "@/components/UI/InfoRow";
-import { useLang } from "@/hooks";
+import { useLang, useViewpoint } from "@/hooks";
 import CardInfo from "../Common/CardInfo";
 import TechLogo from "../Common/TechLogo";
 import utils from "@/utils";
 
 const { Paragraph } = Typography;
 
-const ProjectsWork: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
+const { FlexRow, FlexCol } = Flex
+
+const ProjectsWork: ForwardRefRenderFunction<HTMLDivElement, {}> = ({ }, ref) => {
   const { lang, locale } = useLang();
+
+  const { isSmTablet } = useViewpoint()
 
   const techs = useMemo(() => ["html", "css", "js", "ts", "react", "c-sharp", "net-core"], []);
 
@@ -78,9 +82,11 @@ const ProjectsWork: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
 
   const renderFeatures = () => {
     return features.map((feature) => (
-      <CardInfo key={feature.id} head={feature.label}>
-        {feature.content}
-      </CardInfo>
+      <FlexCol key={feature.id} xs={24} md={isSmTablet ? 24 : 12} lg={12} span={12}>
+        <CardInfo head={<Paragraph size={16}>{feature.label}</Paragraph>}>
+          <Paragraph size={15}>{feature.content}</Paragraph>
+        </CardInfo>
+      </FlexCol>
     ));
   };
 
@@ -89,12 +95,14 @@ const ProjectsWork: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
       <InfoRow {...infoRowProps} label={lang.projects.description} text={lang.projects.work.description} />
       <InfoRow {...infoRowProps} label={lang.projects.role} text="Frontend" />
       <InfoRow {...infoRowProps} label={lang.projects.tech} text={renderTechs()} />
-      <Divider>
-        <Paragraph strong size={17}>
+      <Divider rootClassName="content-space">
+        <Paragraph strong size={16}>
           {lang.projects.work.features.title}
         </Paragraph>
       </Divider>
-      {renderFeatures()}
+      <FlexRow>
+        {renderFeatures()}
+      </FlexRow>
     </CardInfo>
   );
 };

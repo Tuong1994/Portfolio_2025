@@ -1,0 +1,38 @@
+.projects {
+  .projects-side {
+    .side-item {
+      width: $w-full;
+      height: $h-10 * 4;
+      border-radius: $rounded-lg;
+      box-shadow: 0 0 10px $bg-black-rgba-xs;
+      position: relative;
+      overflow: hidden;
+      &::after {
+        content: '';
+        width: $w-full;
+        height: $h-full;
+        background: $bg-black-rgba-xs;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+      .item-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .item-layer {
+        width: $w-full;
+        height: $h-full / 2;
+        background: $bg-purple-rgba-sm;
+         box-shadow: 0 10px 30px 40px $bg-white;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+      }
+    }
+  }
+}

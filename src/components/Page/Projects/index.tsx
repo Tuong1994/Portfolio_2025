@@ -20,9 +20,13 @@ const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
 
   const { layoutValue } = useLayout();
 
-  const { layoutColor } = layoutValue;
+  const { layoutColor, layoutTheme } = layoutValue;
 
-  const className = utils.formatClassName("projects");
+  const themeClassName = `projects-${layoutTheme}`
+
+  const colorClassName = `projects-${layoutColor}`
+
+  const className = utils.formatClassName("projects", themeClassName, colorClassName);
 
   const items: TabsItems = [
     {
