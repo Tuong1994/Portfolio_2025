@@ -35,6 +35,7 @@ const projects_vn = {
     title: "Dự Án Cá Nhân",
     features: "Tính Năng",
     demo: "Xem Demo",
+    detail: 'Xem chi tiết',
     healthyFood: {
       main: {
         title: "TRANG THỰC PHẨM SẠCH",

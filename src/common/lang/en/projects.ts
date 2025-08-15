@@ -35,6 +35,7 @@ const projects_en = {
     title: "Side Projects",
     features: "Features",
     demo: "Live Demo",
+    detail: 'See more',
     healthyFood: {
       main: {
         title: "HEALTHY FOOD PAGE",

@@ -1,9 +1,7 @@
-import { Card, Typography } from "@/components/UI";
+import { Card } from "@/components/UI";
 import { forwardRef, ForwardRefRenderFunction, ReactNode } from "react";
 import useLayout from "@/components/UI/Layout/useLayout";
 import utils from "@/utils";
-
-const { Paragraph } = Typography;
 
 interface CardInfoProps {
   rootClassName?: string;
@@ -25,7 +23,7 @@ const CardInfo: ForwardRefRenderFunction<HTMLDivElement, CardInfoProps> = (
 
   return (
     <Card ref={ref} rootClassName={className}>
-      <div className="info-head">{head}</div>
+      {head && <div className="info-head">{head}</div>}
       {children}
     </Card>
   );
