@@ -1,9 +1,10 @@
 import { ForwardRefRenderFunction, forwardRef, useMemo } from "react";
-import { Divider, Flex, Space, Image, Typography } from "@/components/UI";
+import { Divider, Flex, Space, Typography } from "@/components/UI";
 import { FaHammer } from "react-icons/fa";
 import { useLang, useViewpoint } from "@/hooks";
 import CardInfo from "../Common/CardInfo";
 import utils from "@/utils";
+import TechLogo from "../Common/TechLogo";
 
 const { FlexRow, FlexCol } = Flex;
 
@@ -100,9 +101,7 @@ const AboutSkills: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
       const itemClassName = utils.formatClassName("skills-item", spacingClassName);
       return (
         <Space key={logo.name} aligns="middle" rootClassName={itemClassName}>
-          <div className="item-image">
-            <Image imgWidth="100%" imgHeight="100%" src={`/dev/${logo.img}.svg`} alt={logo.name} />
-          </div>
+          <TechLogo rootClassName="item-image" src={`/dev/${logo.img}.svg`} alt={logo.name} />
           <div className="item-name">
             <Paragraph strong aligns="center">
               {logo.name}

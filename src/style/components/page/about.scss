@@ -20,13 +20,6 @@
         transform: scale(0.7);
       }
       .item-image {
-        width: $w-5;
-        height: $h-5;
-        border-radius: $rounded;
-        border: 3px solid $bg-dark;
-        background: $bg-white;
-        overflow: hidden;
-        transition: border-color $transition-time-sm $transition-fn;
         .image {
           transform: scale(0.5);
         }
@@ -50,13 +43,6 @@
   .about-info {
     .info-card {
       box-shadow: 0 0 10px $bg-black;
-    }
-  }
-  .about-skills {
-    .skills-item {
-      .item-image {
-        border-color: $bg-white;
-      }
     }
   }
   svg {

@@ -1,0 +1,14 @@
+.tech-logo {
+  border-radius: $rounded;
+  border: 2px solid $bg-dark;
+  background: $bg-white;
+  overflow: hidden;
+  transition: border-color $transition-time-sm $transition-fn;
+  .image {
+    transform: scale(0.8);
+  }
+}
+
+.tech-logo-dark {
+  border-color: $bg-white;
+}

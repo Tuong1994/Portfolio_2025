@@ -1,18 +1,18 @@
 const experiences_en = {
   firstCompany: {
     jobDesc: {
-      title: "Job description",
-      content_1: "Based on the design, create the user interface",
-      content_2: "Discuss with the product development team to understand the flow of new features",
-      content_3: "Develop, maintain, and update application functions according to management requirements",
+      title: "Job Description",
+      content_1: "Create user interfaces based on design specifications",
+      content_2: "Collaborate with the product development team to understand the workflow of new features",
+      content_3: "Develop, maintain, and update application features according to management requirements",
     },
     project: {
-      title: "Involved features",
-      name_1: "Admin control panel",
-      name_2: "Printed template",
-      name_3: "Photo library",
-      name_4: "Buy wholesale price",
-      name_5: "Buy X get Y",
+      title: "Involved Features",
+      name_1: "Admin Control Panel",
+      name_2: "Printable Template",
+      name_3: "Photo Library",
+      name_4: "Wholesale Purchase",
+      name_5: "Buy X, Get Y",
     },
   },
 };

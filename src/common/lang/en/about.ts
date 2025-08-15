@@ -1,6 +1,6 @@
 const about_en = {
   content:
-    "Web Developer with a diverse skill set encompassing both frontend and backend expertise. Leveraging over a year of experience, I blend design finesse with robust backend functionality. My non-IT background fosters innovative solutions and a fresh approach to development challenges.",
+    "Web developer with a diverse skill set in both frontend and backend development. With over a year of experience, I combine design finesse with strong backend capabilities. My non-IT background brings innovative solutions and a fresh perspective to development challenges.",
   personal: {
     email: "Email",
     phone: "Phone",
@@ -12,7 +12,7 @@ const about_en = {
     title: "Education",
   },
   skills: {
-    title: "My top skills",
+    title: "My Top Skills",
   },
   download: "Download CV",
 };

@@ -1,8 +1,8 @@
 const intro_vn = {
-  greeting: "Xin chào, tôi là",
+  greeting: "Xin chào, tôi tên là",
   content:
-    "Tôi là một lập trình viên có hơn một năm kinh nghiệm. Chuyên môn của tôi là thiết kế và tạo một trang web, ứng dụng di động",
-  action: "Biết thêm về tôi",
+    "Tôi là lập trình viên với hơn một năm kinh nghiệm. Chuyên môn của tôi là thiết kế và tạo trang web, ứng dụng di động.",
+  action: "Tìm hiểu thêm về tôi",
   download: "Tải CV",
 };
 

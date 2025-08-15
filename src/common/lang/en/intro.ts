@@ -1,7 +1,7 @@
 const intro_en = {
   greeting: "Hello, my name is",
   content:
-    "I am a programmer with over a year of experience. My expertise is to design and create a website, mobile app",
+    "I am a programmer with over a year of experience. My expertise is in designing and creating websites and mobile apps.",
   action: "More about me",
   download: "Download CV",
 };

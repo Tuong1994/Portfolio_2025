@@ -42,7 +42,7 @@ const InfoRow: ForwardRefRenderFunction<HTMLDivElement, InfoRowProps> = (
         </Paragraph>
       </Col>
       <Col {...textSpanDefaultProps}>
-        <Paragraph {...textDefaultProps}>{text}</Paragraph>
+        {typeof text === "string" ? <Paragraph {...textDefaultProps}>{text}</Paragraph> : text}
       </Col>
     </Row>
   );

@@ -1,10 +1,10 @@
 const about_vn = {
   content:
-    "Nhà phát triển web với bộ kỹ năng đa dạng bao gồm cả kiến ​​thức chuyên môn về frontend và backend. Tận dụng hơn một năm kinh nghiệm, tôi kết hợp sự khéo léo trong thiết kế với chức năng phụ trợ mạnh mẽ. Nền tảng không thuộc CNTT của tôi thúc đẩy các giải pháp sáng tạo và cách tiếp cận mới đối với các thách thức phát triển.",
+    "Lập trình viên web với bộ kỹ năng đa dạng ở cả frontend và backend. Với hơn một năm kinh nghiệm, tôi kết hợp sự tinh tế trong thiết kế với khả năng backend vững vàng. Xuất thân ngoài ngành IT giúp tôi mang đến các giải pháp sáng tạo và góc nhìn mới cho những thách thức trong phát triển phần mềm.",
   personal: {
     email: "Email",
-    phone: "Điện thoại",
-    birthday: "Sinh nhật",
+    phone: "Số điện thoại",
+    birthday: "Ngày sinh",
     city: "Thành phố",
     hcm: "Hồ Chí Minh",
   },
@@ -12,7 +12,7 @@ const about_vn = {
     title: "Học vấn",
   },
   skills: {
-    title: "Kỹ năng hàng đầu của tôi",
+    title: "Kỹ năng nổi bật",
   },
   download: "Tải CV",
 };
