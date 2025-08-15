@@ -1,5 +1,5 @@
 import { forwardRef, ForwardRefRenderFunction, useMemo } from "react";
-import { InfoRow, Space, Tooltip, Typography } from "@/components/UI";
+import { Divider, InfoRow, Space, Tooltip, Typography } from "@/components/UI";
 import { InfoRowProps } from "@/components/UI/InfoRow";
 import { useLang } from "@/hooks";
 import CardInfo from "../Common/CardInfo";
@@ -9,11 +9,42 @@ import utils from "@/utils";
 const { Paragraph } = Typography;
 
 const ProjectsWork: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
-  const { lang } = useLang();
-
-  const className = utils.formatClassName("projects-work");
+  const { lang, locale } = useLang();
 
   const techs = useMemo(() => ["html", "css", "js", "ts", "react", "c-sharp", "net-core"], []);
+
+  const features = useMemo(
+    () => [
+      {
+        id: "automation",
+        label: lang.projects.work.features.automation.title,
+        content: lang.projects.work.features.automation.description,
+      },
+      {
+        id: "album",
+        label: lang.projects.work.features.album.title,
+        content: lang.projects.work.features.album.description,
+      },
+      {
+        id: "printer",
+        label: lang.projects.work.features.printed.title,
+        content: lang.projects.work.features.printed.description,
+      },
+      {
+        id: "wholesale",
+        label: lang.projects.work.features.wholesale.title,
+        content: lang.projects.work.features.wholesale.description,
+      },
+      {
+        id: "xGetY",
+        label: lang.projects.work.features.xGetY.title,
+        content: lang.projects.work.features.xGetY.description,
+      },
+    ],
+    [locale]
+  );
+
+  const className = utils.formatClassName("projects-work");
 
   const infoRowProps: InfoRowProps = {
     labelProps: { size: 16 },
@@ -35,7 +66,7 @@ const ProjectsWork: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
 
   const renderTechs = () => {
     return (
-      <Space>
+      <Space style={{ marginBottom: "10px" }}>
         {techs.map((tech) => (
           <Tooltip key={tech} label={tech}>
             <TechLogo logoSize={30} src={`/dev/${tech}.svg`} alt={tech} />
@@ -45,11 +76,25 @@ const ProjectsWork: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
     );
   };
 
+  const renderFeatures = () => {
+    return features.map((feature) => (
+      <CardInfo key={feature.id} head={feature.label}>
+        {feature.content}
+      </CardInfo>
+    ));
+  };
+
   return (
     <CardInfo ref={ref} rootClassName={className} head={head}>
       <InfoRow {...infoRowProps} label={lang.projects.description} text={lang.projects.work.description} />
       <InfoRow {...infoRowProps} label={lang.projects.role} text="Frontend" />
       <InfoRow {...infoRowProps} label={lang.projects.tech} text={renderTechs()} />
+      <Divider>
+        <Paragraph strong size={17}>
+          {lang.projects.work.features.title}
+        </Paragraph>
+      </Divider>
+      {renderFeatures()}
     </CardInfo>
   );
 };

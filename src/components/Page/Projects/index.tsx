@@ -51,7 +51,7 @@ const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
     <AnchorSection id={anchorId.PROJECTS}>
       <SectionWrapper ref={ref} rootClassName={className}>
         <SectionTitle>{lang.header.menu.projects}</SectionTitle>
-        <Tabs items={items} color={layoutColor as TabsColor} />
+        <Tabs items={items} color={layoutColor as TabsColor} contentStyle={{ overflow: "unset" }} />
       </SectionWrapper>
     </AnchorSection>
   );
