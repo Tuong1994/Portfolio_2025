@@ -7,12 +7,13 @@ import utils from "@/utils";
 const { Title } = Typography;
 
 interface SectionTitleProps {
+  rootClassName?: string;
   children?: ReactNode;
   titleProps?: TitleProps;
 }
 
 const SectionTitle: ForwardRefRenderFunction<HTMLDivElement, SectionTitleProps> = (
-  { children, titleProps },
+  { rootClassName = "", children, titleProps },
   ref
 ) => {
   const { layoutValue } = useLayout();
@@ -21,7 +22,7 @@ const SectionTitle: ForwardRefRenderFunction<HTMLDivElement, SectionTitleProps> 
 
   const colorClassName = `section-title-${layoutColor}`;
 
-  const className = utils.formatClassName("section-title", colorClassName);
+  const className = utils.formatClassName("section-title", colorClassName, rootClassName);
 
   return (
     <div ref={ref} className={className}>

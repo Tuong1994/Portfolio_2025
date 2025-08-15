@@ -1,0 +1,83 @@
+.contact {
+  transition: background-color $transition-time-sm $transition-fn;
+  .contact-title {
+    & * {
+      color: $text-white !important;
+    }
+  }
+  .contact-info {
+    .info-item {
+      margin-bottom: $m-2;
+      padding: $p-1 - 0.4 $p-1;
+      border-radius: $rounded-md;
+      transition: background-color $transition-time-sm $transition-fn;
+      & * {
+        color: $text-white;
+      }
+    }
+  }
+}
+
+// Theme
+.contact-blue {
+  background: $bg-blue;
+  .contact-info {
+    .info-item {
+      background: $bg-blue;
+    }
+  }
+}
+
+.contact-green {
+  background: $bg-green;
+  .contact-info {
+    .info-item {
+      background: $bg-green;
+    }
+  }
+}
+
+.contact-red {
+  background: $bg-red;
+  .contact-info {
+    .info-item {
+      background: $bg-red;
+    }
+  }
+}
+
+.contact-orange {
+  background: $bg-orange;
+  .contact-info {
+    .info-item {
+      background: $bg-orange;
+    }
+  }
+}
+
+.contact-yellow {
+  background: $bg-yellow;
+  .contact-info {
+    .info-item {
+      background: $bg-yellow;
+    }
+  }
+}
+
+.contact-purple {
+  background: $bg-purple;
+  .contact-info {
+    .info-item {
+      background: $bg-purple;
+    }
+  }
+}
+
+.contact-pink {
+  background: $bg-pink;
+  .contact-info {
+    .info-item {
+      background: $bg-pink;
+    }
+  }
+}
