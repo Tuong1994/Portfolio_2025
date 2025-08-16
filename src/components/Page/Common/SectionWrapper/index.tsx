@@ -22,7 +22,7 @@ const SectionWrapper: ForwardRefRenderFunction<HTMLDivElement, SectionWrapperPro
 
   return (
     <Section ref={ref} rootClassName={className}>
-      {children}
+      <div className="wrapper-child">{children}</div>
     </Section>
   );
 };

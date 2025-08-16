@@ -1,0 +1,76 @@
+.scroll-parallax {
+  position: relative;
+  overflow: hidden;
+  .parallax-background {
+    width: $w-full;
+    height: $h-full;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: transform $transition-time-md $transition-fn;
+    .background-bubble {
+      display: block;
+      position: absolute;
+      border-radius: $rounded-full;
+      transition: background-color $transition-time-md $transition-fn;
+    }
+  }
+}
+
+.scroll-parallax-blue {
+  .parallax-background {
+    .background-bubble {
+      background: $bg-blue-rgba-sm;
+    }
+  }
+}
+
+.scroll-parallax-green {
+  .parallax-background {
+    .background-bubble {
+      background: $bg-green-rgba-sm;
+    }
+  }
+}
+
+.scroll-parallax-red {
+  .parallax-background {
+    .background-bubble {
+      background: $bg-red-rgba-sm;
+    }
+  }
+}
+
+.scroll-parallax-orange {
+  .parallax-background {
+    .background-bubble {
+      background: $bg-orange-rgba-sm;
+    }
+  }
+}
+
+.scroll-parallax-yellow {
+  .parallax-background {
+    .background-bubble {
+      background: $bg-yellow-rgba-sm;
+    }
+  }
+}
+
+.scroll-parallax-purple {
+  .parallax-background {
+    .background-bubble {
+      background: $bg-purple-rgba-sm;
+    }
+  }
+}
+
+.scroll-parallax-pink {
+  .parallax-background {
+    .background-bubble {
+      background: $bg-pink-rgba-sm;
+    }
+  }
+}
+

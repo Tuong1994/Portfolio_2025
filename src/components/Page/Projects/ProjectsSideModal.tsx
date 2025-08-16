@@ -75,6 +75,7 @@ const ProjectsSideModal: ForwardRefRenderFunction<HTMLDivElement, ProjectsSideMo
       hasCancelButton={false}
       head={renderHead()}
       rootClassName={className}
+      okButtonTitle={lang.common.actions.cancel}
       {...restProps}
     >
       {renderContent()}
