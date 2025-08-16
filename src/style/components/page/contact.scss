@@ -8,11 +8,22 @@
   .contact-info {
     .info-item {
       margin-bottom: $m-2;
-      padding: $p-1 - 0.4 $p-1;
+      padding: $p-1 - 0.2 $p-1;
       border-radius: $rounded-md;
       transition: background-color $transition-time-sm $transition-fn;
       & * {
         color: $text-white;
+      }
+    }
+    .info-network {
+      margin-top: $m-2;
+      transform: translateY(0);
+      transition: transform $transition-time-sm $transition-fn;
+      & path {
+        transition: color $transition-time-sm $transition-fn;
+      }
+      &:hover {
+        transform: translateY(-20%);
       }
     }
   }
@@ -25,6 +36,11 @@
     .info-item {
       background: $bg-blue;
     }
+    .info-network {
+      path {
+        color: $text-blue;
+      }
+    }
   }
 }
 
@@ -33,6 +49,11 @@
   .contact-info {
     .info-item {
       background: $bg-green;
+    }
+    .info-network {
+      path {
+        color: $text-green;
+      }
     }
   }
 }
@@ -43,6 +64,11 @@
     .info-item {
       background: $bg-red;
     }
+    .info-network {
+      path {
+        color: $text-red;
+      }
+    }
   }
 }
 
@@ -51,6 +77,11 @@
   .contact-info {
     .info-item {
       background: $bg-orange;
+    }
+    .info-network {
+      path {
+        color: $text-orange;
+      }
     }
   }
 }
@@ -61,6 +92,11 @@
     .info-item {
       background: $bg-yellow;
     }
+    .info-network {
+      path {
+        color: $text-yellow;
+      }
+    }
   }
 }
 
@@ -70,6 +106,11 @@
     .info-item {
       background: $bg-purple;
     }
+    .info-network {
+      path {
+        color: $text-purple;
+      }
+    }
   }
 }
 
@@ -78,6 +119,11 @@
   .contact-info {
     .info-item {
       background: $bg-pink;
+    }
+    .info-network {
+      path {
+        color: $text-pink;
+      }
     }
   }
 }

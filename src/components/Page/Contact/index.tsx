@@ -1,7 +1,7 @@
 import { forwardRef, ForwardRefRenderFunction } from "react";
 import { AnchorScroll, Flex } from "@/components/UI";
 import { anchorId } from "@/common/constant/anchorId";
-import { useLang } from "@/hooks";
+import { useLang, useViewpoint } from "@/hooks";
 import SectionWrapper from "../Common/SectionWrapper";
 import SectionTitle from "../Common/SectionWrapper/SectionTitle";
 import ContactInfo from "./ContactInfo";
@@ -16,6 +16,8 @@ const { FlexRow, FlexCol } = Flex;
 const Contact: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
   const { lang } = useLang();
 
+  const { isSmTablet } = useViewpoint();
+
   const { layoutValue } = useLayout();
 
   const { layoutColor } = layoutValue;
@@ -28,11 +30,11 @@ const Contact: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
     <AnchorSection id={anchorId.CONTACT}>
       <SectionWrapper ref={ref} rootClassName={className}>
         <SectionTitle rootClassName="contact-title">{lang.header.menu.contact}</SectionTitle>
-        <FlexRow>
-          <FlexCol span={12}>
+        <FlexRow justify="between">
+          <FlexCol xs={24} md={isSmTablet ? 24 : 12} lg={12} span={12}>
             <ContactInfo />
           </FlexCol>
-          <FlexCol span={12}>
+          <FlexCol xs={24} md={isSmTablet ? 24 : 12} lg={12} span={12}>
             <ContactForm />
           </FlexCol>
         </FlexRow>

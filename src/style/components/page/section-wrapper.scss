@@ -1,5 +1,5 @@
 .section-wrapper {
-  padding: $p-5 $p-5 * 4;
+  padding: $p-5 $p-5 * 7;
   background: $bg-white;
   transition: background-color $transition-time-sm $transition-fn;
   @include respond(laptop) {

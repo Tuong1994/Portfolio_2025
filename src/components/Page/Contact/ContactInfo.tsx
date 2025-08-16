@@ -57,7 +57,7 @@ const ContactInfo: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
       <InfoRow {...infoRowProps} label={<HiEnvelope />} text="nbtuong1994@gmail.com" />
       <Space justify="center">
         {socialNetworks.map((network) => (
-          <a key={network.id} href={network.linkURL} target="_blank">
+          <a key={network.id} href={network.linkURL} target="_blank" className="info-network">
             {network.icon}
           </a>
         ))}

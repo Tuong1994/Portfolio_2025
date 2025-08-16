@@ -1,4 +1,4 @@
-import { UI } from "@/components";
+import { ToastMessage, Layout } from "./components/UI";
 import Header from "./components/Page/Common/Header";
 import BgParticles from "./components/Page/Common/BgParticles";
 import BgSection from "./components/Page/Common/BgSection";
@@ -11,25 +11,26 @@ import Contact from "./components/Page/Contact";
 import bgVector from "/bg-vector.jpg";
 import "./style/main.scss";
 
-const { Layout } = UI;
-
 const { Container } = Layout;
 
 function App() {
   return (
-    <Container>
-      <div style={{ position: "relative" }}>
-        <Header />
-        <BgParticles />
-        <Intro />
-      </div>
-      <FogOverlay />
-      <BgSection bgURL={bgVector} />
-      <About />
-      <Experiences />
-      <Projects />
-      <Contact />
-    </Container>
+    <>
+      <Container>
+        <div style={{ position: "relative" }}>
+          <Header />
+          <BgParticles />
+          <Intro />
+        </div>
+        <FogOverlay />
+        <BgSection bgURL={bgVector} />
+        <About />
+        <Experiences />
+        <Projects />
+        <Contact />
+      </Container>
+      <ToastMessage />
+    </>
   );
 }
 
