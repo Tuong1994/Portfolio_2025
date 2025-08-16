@@ -1,4 +1,13 @@
 .projects {
+  .projects-title,
+  .projects-content {
+    opacity: 0;
+    transform: translateX(10%);
+    transition: opacity $transition-time-md $transition-fn, transform $transition-time-md $transition-fn;
+  }
+  .projects-content {
+    transform: scale(0);
+  }
   .projects-side {
     .side-item {
       width: $w-full;
@@ -164,5 +173,17 @@
         background: linear-gradient(to top, $bg-pink-rgba-md 10%, $bg-pink-rgba-xs 90%);
       }
     }
+  }
+}
+
+// Reveal
+.projects-reveal {
+  .projects-title,
+  .projects-content {
+    opacity: 1;
+    transform: translate(0);
+  }
+  .projects-content {
+    transform: scale(1);
   }
 }

@@ -1,4 +1,17 @@
 .about {
+  .about-title,
+  .about-content,
+  .about-skills {
+    opacity: 0;
+    transform: translateX(-10%);
+    transition: opacity $transition-time-md $transition-fn, transform $transition-time-md $transition-fn;
+  }
+  .about-content {
+    transform: translateX(10%);
+  }
+  .about-skills {
+    transform: translateY(10%);
+  }
   .about-info {
     .info-card {
       margin-bottom: $m-2;
@@ -155,5 +168,15 @@
         background: $bg-pink;
       }
     }
+  }
+}
+
+// Reveal
+.about-reveal {
+  .about-title,
+  .about-content,
+  .about-skills {
+    opacity: 1;
+    transform: translate(0);
   }
 }

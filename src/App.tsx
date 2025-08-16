@@ -8,6 +8,7 @@ import About from "./components/Page/About";
 import Experiences from "./components/Page/Experiences";
 import Projects from "./components/Page/Projects";
 import Contact from "./components/Page/Contact";
+import bgCoding from "/bg-coding.png";
 import bgVector from "/bg-vector.jpg";
 import "./style/main.scss";
 
@@ -24,9 +25,13 @@ function App() {
         </div>
         <FogOverlay />
         <BgSection bgURL={bgVector} />
+        <FogOverlay position="top" />
         <About />
         <Experiences />
         <Projects />
+        <FogOverlay />
+        <BgSection bgURL={bgCoding} />
+        <FogOverlay hasColor position="top" />
         <Contact />
       </Container>
       <ToastMessage />

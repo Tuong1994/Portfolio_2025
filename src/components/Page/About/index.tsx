@@ -1,4 +1,4 @@
-import { forwardRef, ForwardRefRenderFunction } from "react";
+import { forwardRef, ForwardRefRenderFunction, useRef } from "react";
 import { Flex, AnchorScroll } from "@/components/UI";
 import { useLang, useViewpoint } from "@/hooks";
 import { anchorId } from "@/common/constant/anchorId";
@@ -8,6 +8,7 @@ import AboutContent from "./AboutContent";
 import AboutInfo from "./AboutInfo";
 import AboutSkills from "./AboutSkills";
 import useLayout from "@/components/UI/Layout/useLayout";
+import useReveal from "@/hooks/features/useReveal";
 import utils from "@/utils";
 
 const { AnchorSection } = AnchorScroll;
@@ -15,6 +16,10 @@ const { AnchorSection } = AnchorScroll;
 const { FlexRow, FlexCol } = Flex;
 
 const About: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+
+  const reveal = useReveal(aboutRef, { interval: true });
+
   const { lang } = useLang();
 
   const { isSmTablet } = useViewpoint();
@@ -27,13 +32,15 @@ const About: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
 
   const themeClassName = `about-${layoutTheme}`;
 
-  const className = utils.formatClassName("about", colorClassName, themeClassName);
+  const revealClassName = reveal ? "about-reveal" : "";
+
+  const className = utils.formatClassName("about", revealClassName, colorClassName, themeClassName);
 
   return (
-    <AnchorSection id={anchorId.ABOUT}>
+    <AnchorSection ref={aboutRef} id={anchorId.ABOUT}>
       <SectionWrapper ref={ref} rootClassName={className}>
-        <SectionTitle>{lang.header.menu.about}</SectionTitle>
-        <FlexRow gutters={[20]} justify="between">
+        <SectionTitle rootClassName="about-title">{lang.header.menu.about}</SectionTitle>
+        <FlexRow gutters={[20]} justify="between" rootClassName="about-content">
           <FlexCol xs={24} md={isSmTablet ? 24 : 12} lg={12} span={12}>
             <AboutContent />
           </FlexCol>

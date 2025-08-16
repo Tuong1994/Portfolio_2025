@@ -6,7 +6,7 @@ const useAnchor = () => {
     const menuItems = document.querySelectorAll(".anchor");
     contents.forEach((content: any) => {
       const scrollY = window.scrollY;
-      const top = content.offsetTop - 150;
+      const top = content.offsetTop - 300;
       const height = content.offsetHeight;
       if (scrollY > top && scrollY < top + height) {
         menuItems.forEach((menu) => {

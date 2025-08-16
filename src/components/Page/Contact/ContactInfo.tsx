@@ -4,16 +4,13 @@ import { HiPhone, HiEnvelope } from "react-icons/hi2";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { InfoRowProps } from "@/components/UI/InfoRow";
 import { useLang } from "@/hooks";
-import useLayout from "@/components/UI/Layout/useLayout";
-import utils from "@/utils";
 import CardInfo from "../Common/CardInfo";
+import utils from "@/utils";
 
 const { Paragraph } = Typography;
 
 const ContactInfo: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
   const { lang } = useLang();
-
-  const { layoutValue } = useLayout();
 
   const socialNetworks = useMemo(
     () => [

@@ -1,15 +1,95 @@
 .fog-overlay {
   width: $w-full;
-  height: $h-5;
+  min-height: $h-5;
+  padding-bottom: $p-5;
   background: $bg-white;
-  box-shadow: 0 10px 30px 40px $bg-white;
+  box-shadow: 0 50px 30px 40px $bg-white;
   position: absolute;
   z-index: 2;
-  transform: background-color $transition-time-sm $transition-fn,
+  transition: background-color $transition-time-sm $transition-fn,
     box-shadow $transition-time-sm $transition-fn;
+}
+
+.fog-overlay-top {
+  box-shadow: 0 -50px 30px 40px $bg-white;
 }
 
 .fog-overlay-dark {
   background: $bg-dark;
-  box-shadow: 0 10px 30px 40px $bg-dark;
+  box-shadow: 0 50px 30px 40px $bg-dark;
+}
+
+.fog-overlay-dark.fog-overlay-top {
+  box-shadow: 0 -50px 30px 40px $bg-dark;
+}
+
+// Theme
+.fog-overlay-blue {
+  background: $bg-blue;
+  box-shadow: 0 50px 30px 40px $bg-blue;
+}
+
+.fog-overlay-green {
+  background: $bg-green;
+  box-shadow: 0 50px 30px 40px $bg-green;
+}
+
+.fog-overlay-red {
+  background: $bg-red;
+  box-shadow: 0 50px 30px 40px $bg-red;
+}
+
+.fog-overlay-orange {
+  background: $bg-orange;
+  box-shadow: 0 50px 30px 40px $bg-orange;
+}
+
+.fog-overlay-yellow {
+  background: $bg-yellow;
+  box-shadow: 0 50px 30px 40px $bg-yellow;
+}
+
+.fog-overlay-purple {
+  background: $bg-purple;
+  box-shadow: 0 50px 30px 40px $bg-purple;
+}
+
+.fog-overlay-pink {
+  background: $bg-pink;
+  box-shadow: 0 50px 30px 40px $bg-pink;
+}
+
+.fog-overlay-top.fog-overlay-blue {
+  background: $bg-blue;
+  box-shadow: 0 -50px 30px 40px $bg-blue;
+}
+
+.fog-overlay-top.fog-overlay-green {
+  background: $bg-green;
+  box-shadow: 0 -50px 30px 40px $bg-green;
+}
+
+.fog-overlay-top.fog-overlay-red {
+  background: $bg-red;
+  box-shadow: 0 -50px 30px 40px $bg-red;
+}
+
+.fog-overlay-top.fog-overlay-orange {
+  background: $bg-orange;
+  box-shadow: 0 -50px 30px 40px $bg-orange;
+}
+
+.fog-overlay-top.fog-overlay-yellow {
+  background: $bg-yellow;
+  box-shadow: 0 -50px 30px 40px $bg-yellow;
+}
+
+.fog-overlay-top.fog-overlay-purple {
+  background: $bg-purple;
+  box-shadow: 0 -50px 30px 40px $bg-purple;
+}
+
+.fog-overlay-top.fog-overlay-pink {
+  background: $bg-pink;
+  box-shadow: 0 -50px 30px 40px $bg-pink;
 }

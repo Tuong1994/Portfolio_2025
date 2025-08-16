@@ -35,7 +35,7 @@ const projects_vn = {
     title: "Dự Án Cá Nhân",
     features: "Tính Năng",
     demo: "Xem Demo",
-    detail: 'Xem chi tiết',
+    detail: "Xem chi tiết",
     healthyFood: {
       main: {
         title: "TRANG THỰC PHẨM SẠCH",
@@ -64,6 +64,13 @@ const projects_vn = {
         features_9: "Chuyển đổi chế độ sáng và tối",
         features_10: "Phân quyền cho tài khoản người dùng",
       },
+    },
+    crossUi: {
+      title: "CROSS UI",
+      description:
+        "Tài liệu bộ UI kit cho React và Vue, cung cấp nhiều thành phần như Button, Avatar, Form và nhiều hơn nữa.",
+      features_1: "Chuyển đổi ngôn ngữ giữa Tiếng Anh và Tiếng Việt",
+      features_2: "Chuyển đổi chế độ sáng và tối",
     },
   },
 };

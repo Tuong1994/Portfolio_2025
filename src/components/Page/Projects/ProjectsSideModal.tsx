@@ -49,8 +49,13 @@ const ProjectsSideModal: ForwardRefRenderFunction<HTMLDivElement, ProjectsSideMo
             alt={project.label}
           />
         </div>
-        <Button color={layoutColor}>
-          <a href={project.demoURL} target="_blank">{lang.projects.side.demo}</a>
+        <Paragraph size={16} strong style={{ marginBottom: "20px" }}>
+          {project.desc}
+        </Paragraph>
+        <Button color={layoutColor} rootClassName="content-space">
+          <a href={project.demoURL} target="_blank">
+            {lang.projects.side.demo}
+          </a>
         </Button>
         <Divider>{lang.projects.side.features}</Divider>
         <List icon={<FaCodeBranch />}>

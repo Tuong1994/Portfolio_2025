@@ -2,14 +2,30 @@ import { FC } from "react";
 import useLayout from "@/components/UI/Layout/useLayout";
 import utils from "@/utils";
 
-const FogOverlay: FC<{}> = () => {
+interface FogOverlayProps {
+  rootClassName?: string;
+  hasColor?: boolean;
+  position?: "top" | "bottom";
+}
+
+const FogOverlay: FC<FogOverlayProps> = ({ rootClassName = "", hasColor, position = "bottom" }) => {
   const { layoutValue } = useLayout();
 
-  const { layoutTheme } = layoutValue;
+  const { layoutColor, layoutTheme } = layoutValue;
 
-  const themeClassName = `fog-overlay-${layoutTheme}`
+  const posClassName = `fog-overlay-${position}`;
 
-  const className = utils.formatClassName("fog-overlay", themeClassName);
+  const themeClassName = !hasColor ? `fog-overlay-${layoutTheme}` : '';
+
+  const colorClassName = hasColor ? `fog-overlay-${layoutColor}` : "";
+
+  const className = utils.formatClassName(
+    "fog-overlay",
+    posClassName,
+    themeClassName,
+    colorClassName,
+    rootClassName
+  );
 
   return <div className={className}></div>;
 };

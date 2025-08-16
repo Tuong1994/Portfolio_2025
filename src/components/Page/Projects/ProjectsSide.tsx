@@ -58,6 +58,17 @@ const ProjectsSide: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
           { id: "admin-10", desc: lang.projects.side.healthyFood.admin.features_10 },
         ],
       },
+      {
+        id: "cross-ui",
+        label: lang.projects.side.crossUi.title,
+        desc: lang.projects.side.crossUi.description,
+        imgURL: "/projects/cross-ui.PNG",
+        demoURL: "https://cross-ui-doc.vercel.app/",
+        features: [
+          { id: "cross-ui-1", desc: lang.projects.side.crossUi.features_1 },
+          { id: "cross-ui-2", desc: lang.projects.side.crossUi.features_2 },
+        ],
+      },
     ],
     [locale]
   );

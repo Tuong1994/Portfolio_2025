@@ -1,4 +1,4 @@
-import { forwardRef, ForwardRefRenderFunction } from "react";
+import { forwardRef, ForwardRefRenderFunction, useRef } from "react";
 import { AnchorScroll, Tabs, Typography, Space } from "@/components/UI";
 import { BsLightbulb, BsBuilding } from "react-icons/bs";
 import { TabsColor, TabsItems } from "@/components/UI/Tabs/type";
@@ -9,6 +9,7 @@ import SectionTitle from "../Common/SectionWrapper/SectionTitle";
 import ProjectsWork from "./ProjectsWork";
 import ProjectsSide from "./ProjectsSide";
 import useLayout from "@/components/UI/Layout/useLayout";
+import useReveal from "@/hooks/features/useReveal";
 import utils from "@/utils";
 
 const { AnchorSection } = AnchorScroll;
@@ -16,17 +17,23 @@ const { AnchorSection } = AnchorScroll;
 const { Paragraph } = Typography;
 
 const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
+  const projectsRef = useRef<HTMLDivElement | null>(null);
+
+  const reveal = useReveal(projectsRef, { interval: true });
+
   const { lang } = useLang();
 
   const { layoutValue } = useLayout();
 
   const { layoutColor, layoutTheme } = layoutValue;
 
-  const themeClassName = `projects-${layoutTheme}`
+  const revealClassName = reveal ? "projects-reveal" : "";
 
-  const colorClassName = `projects-${layoutColor}`
+  const themeClassName = `projects-${layoutTheme}`;
 
-  const className = utils.formatClassName("projects", themeClassName, colorClassName);
+  const colorClassName = `projects-${layoutColor}`;
+
+  const className = utils.formatClassName("projects", themeClassName, revealClassName, colorClassName);
 
   const items: TabsItems = [
     {
@@ -52,10 +59,15 @@ const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
   ];
 
   return (
-    <AnchorSection id={anchorId.PROJECTS}>
+    <AnchorSection ref={projectsRef} id={anchorId.PROJECTS}>
       <SectionWrapper ref={ref} rootClassName={className}>
-        <SectionTitle>{lang.header.menu.projects}</SectionTitle>
-        <Tabs items={items} color={layoutColor as TabsColor} contentStyle={{ overflow: "unset" }} />
+        <SectionTitle rootClassName="projects-title">{lang.header.menu.projects}</SectionTitle>
+        <Tabs
+          items={items}
+          color={layoutColor as TabsColor}
+          rootClassName="projects-content"
+          contentStyle={{ overflow: "unset" }}
+        />
       </SectionWrapper>
     </AnchorSection>
   );

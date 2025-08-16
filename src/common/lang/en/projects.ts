@@ -35,7 +35,7 @@ const projects_en = {
     title: "Side Projects",
     features: "Features",
     demo: "Live Demo",
-    detail: 'See more',
+    detail: "See more",
     healthyFood: {
       main: {
         title: "HEALTHY FOOD PAGE",
@@ -64,6 +64,13 @@ const projects_en = {
         features_9: "Toggle light and dark mode",
         features_10: "Set permissions for user accounts",
       },
+    },
+    crossUi: {
+      title: "CROSS UI",
+      description:
+        "A UI kit documentation for React and Vue, providing various components such as Button, Avatar, Form, and more.",
+      features_1: "Switch language between English and Vietnamese",
+      features_2: "Toggle light and dark mode",
     },
   },
 };
