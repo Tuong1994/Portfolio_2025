@@ -15,8 +15,6 @@ import SloganLoveCoding from "./components/Page/Common/Slogan/SloganLoveCoding";
 import SloganParagraph from "./components/Page/Common/Slogan/SloganParagraph";
 import useParticles from "./components/Page/Common/BgParticles/useParticles";
 import bubbleOptions from "./components/Page/Common/BgParticles/bubbleOptions";
-import bgCoding from "/bg-coding.png";
-import bgVector from "/bg-vector.jpg";
 import "./style/main.scss";
 
 const { Container } = Layout;
@@ -39,7 +37,7 @@ function App() {
         </div>
 
         <FogOverlay />
-        <BgSection bgURL={bgVector}>
+        <BgSection bgURL="/bg-vector.jpg">
           <SloganLoveCoding />
         </BgSection>
         <FogOverlay position="top" />
@@ -52,7 +50,7 @@ function App() {
         </ScrollParallax>
 
         <FogOverlay />
-        <BgSection bgURL={bgCoding}>
+        <BgSection bgURL="/bg-coding.png">
           <SloganParagraph />
         </BgSection>
         <FogOverlay hasColor position="top" />
