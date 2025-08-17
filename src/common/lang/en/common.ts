@@ -103,6 +103,10 @@ const common_en = {
       prefix: "I",
       suffix: "Coding",
     },
+    paragraph: {
+      content_1: 'Where creativity meets code.',
+      content_2: 'Performance. Scalability. Elegance.'
+    }
   },
 };
 

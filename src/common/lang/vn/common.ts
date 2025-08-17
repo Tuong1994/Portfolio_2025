@@ -103,6 +103,10 @@ const common_vn = {
       prefix: "Tôi",
       suffix: "lập trình",
     },
+    paragraph: {
+      content_1: "Nơi sáng tạo gặp gỡ lập trình.",
+      content_2: "Hiệu năng. Khả năng mở rộng. Sự tinh tế.",
+    },
   },
 };
 

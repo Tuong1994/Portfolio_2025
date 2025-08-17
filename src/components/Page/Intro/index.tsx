@@ -12,13 +12,13 @@ const { FlexRow, FlexCol } = Flex;
 const { AnchorSection } = AnchorScroll;
 
 const Intro: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
-  const { isPhone, isTablet, isLgTablet } = useViewpoint();
+  const { isPhone, isTablet, isLaptop } = useViewpoint();
 
   const { layoutValue } = useLayout();
 
   const { layoutColor, layoutTheme } = layoutValue;
 
-  const responsive = isPhone || isTablet || isLgTablet;
+  const responsive = isPhone || isTablet || isLaptop;
 
   const colorClassName = `intro-${layoutColor}`;
 

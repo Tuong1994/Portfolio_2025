@@ -1,4 +1,5 @@
 import { ToastMessage, Layout } from "./components/UI";
+import { useViewpoint } from "./hooks";
 import Header from "./components/Page/Common/Header";
 import BgParticles from "./components/Page/Common/BgParticles";
 import BgAvatar from "./components/Page/Common/BgAvatar/BgAvatar";
@@ -11,17 +12,17 @@ import Projects from "./components/Page/Projects";
 import Contact from "./components/Page/Contact";
 import ScrollParallax from "./components/Page/Common/ScrollParallax";
 import SloganLoveCoding from "./components/Page/Common/Slogan/SloganLoveCoding";
+import SloganParagraph from "./components/Page/Common/Slogan/SloganParagraph";
 import bgCoding from "/bg-coding.png";
 import bgVector from "/bg-vector.jpg";
 import "./style/main.scss";
-import { useViewpoint } from "./hooks";
 
 const { Container } = Layout;
 
 function App() {
-  const { isPhone, isTablet, isLgTablet } = useViewpoint();
+  const { isPhone, isTablet, isLaptop } = useViewpoint();
 
-  const responsive = isPhone || isTablet || isLgTablet;
+  const responsive = isPhone || isTablet || isLaptop;
 
   return (
     <>
@@ -29,7 +30,7 @@ function App() {
         <div style={{ position: "relative" }}>
           <Header />
           {!responsive && <BgAvatar />}
-          <BgParticles />
+          <BgParticles id="bannerParticles" />
           <Intro />
         </div>
 
@@ -47,10 +48,15 @@ function App() {
         </ScrollParallax>
 
         <FogOverlay />
-        <BgSection bgURL={bgCoding} />
+        <BgSection bgURL={bgCoding}>
+          <SloganParagraph />
+        </BgSection>
         <FogOverlay hasColor position="top" />
 
-        <Contact />
+        <div style={{ position: "relative" }}>
+          <BgParticles id="contactParticles" style={{ zIndex: 2 }} />
+          <Contact />
+        </div>
       </Container>
 
       <ToastMessage />

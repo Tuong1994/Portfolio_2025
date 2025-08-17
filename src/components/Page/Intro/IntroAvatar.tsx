@@ -1,6 +1,5 @@
 import { forwardRef, ForwardRefRenderFunction } from "react";
-import { Image } from "@/components/UI";
-import avatar from "/avatar-filter.png";
+import avatar from "/avatar.png";
 import utils from "@/utils";
 
 const IntroAvatar: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
@@ -10,7 +9,7 @@ const IntroAvatar: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
     <div ref={ref} className={className}>
       <div className="avatar-wrapper">
         <div className="wrapper-image">
-          <Image imgWidth="100%" imgHeight="100%" src={avatar} />
+          <img src={avatar} alt="avatar" className="image-view" />
         </div>
         <div className="wrapper-layer"></div>
         <div className="wrapper-dots">

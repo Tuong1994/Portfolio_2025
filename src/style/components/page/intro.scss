@@ -13,27 +13,66 @@
       .wrapper-image {
         width: $w-full;
         height: $h-full;
-        border-top-right-radius: $rounded-md;
-        border-top-left-radius: $rounded-xxl;
-        border-bottom-left-radius: $rounded-md;
-        border-bottom-right-radius: $rounded-xxl;
-        background: $bg-slate;
+        position: relative;
+        overflow: visible;
+        &::after {
+          content: "";
+          width: $w-full;
+          height: $h-full / 2;
+          border: 2px solid $bg-black;
+          border-top-right-radius: $rounded-lg;
+          border-top-left-radius: $rounded-xxl;
+          border-bottom-left-radius: $rounded-lg;
+          border-bottom-right-radius: $rounded-xxl;
+          position: absolute;
+          bottom: -2px;
+          left: -2px;
+          @include respond(laptop) {
+            width: $w-10 * 3;
+            height: $h-10 * 2;
+            bottom: 48px;
+          }
+          @include respond(lgTablet) {
+            width: $w-full;
+            height: $h-full / 2;
+            bottom: -2px;
+          }
+        }
+        .image-view {
+          width: $w-10 * 2.5;
+          height: $h-10 * 3.5;
+          border-top-right-radius: $rounded-lg;
+          border-top-left-radius: $rounded-xxl;
+          border-bottom-left-radius: $rounded-lg;
+          border-bottom-right-radius: $rounded-xxl;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          @include respond(laptop) {
+            width: $w-10 * 3;
+            height: $h-10 * 4;
+          }
+          @include respond(lgTablet) {
+            width: $w-10 * 2.5;
+            height: $h-10 * 3.5;
+          }
+        }
       }
       .wrapper-layer {
         width: $w-10 * 2;
         height: $h-10 * 3;
-        border-top-left-radius: $rounded-md;
+        border-top-right-radius: $rounded-lg;
+        border-top-left-radius: $rounded-xxl;
+        border-bottom-left-radius: $rounded-lg;
+        border-bottom-right-radius: $rounded-xxl;
         background: $bg-purple-rgba-sm;
         position: absolute;
-        top: -2rem;
+        top: 2rem;
         left: -2rem;
         z-index: -1;
         animation: clockwise 3s linear infinite;
         transition: background-color $transition-time-sm $transition-fn;
-        @include respond(lgTablet) {
-          width: $w-10 * 1.5;
-          height: $h-10 * 2;
-        }
       }
       .wrapper-dots {
         width: $w-1 * 7;
@@ -42,7 +81,8 @@
         gap: 0.5rem;
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: -20px;
+        z-index: 3;
         animation: counterClockwise 3s linear infinite;
         .dots-item {
           width: $w-1;
@@ -50,6 +90,12 @@
           background: $bg-dark;
           border-radius: $rounded-full;
           transition: background-color $transition-time-sm $transition-fn;
+        }
+        @include respond(laptop) {
+          bottom: 20px;
+        }
+        @include respond(lgTablet) {
+          bottom: -20px;
         }
       }
       @include respond(lgTablet) {
@@ -307,4 +353,3 @@
     transform: rotate(-360deg) translateX(10px) rotate(360deg);
   }
 }
-
