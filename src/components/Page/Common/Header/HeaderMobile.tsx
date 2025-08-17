@@ -25,7 +25,7 @@ const HeaderMobile: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
 
   const renderMenu = () => {
     return menus.map((menu) => (
-      <Anchor key={menu.id} id={menu.id}>
+      <Anchor key={menu.id} id={menu.id} linkColor={layoutColor}>
         {menu.title}
       </Anchor>
     ));
