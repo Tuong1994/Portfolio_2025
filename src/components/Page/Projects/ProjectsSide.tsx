@@ -119,7 +119,7 @@ const ProjectsSide: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
   return (
     <>
       <CardInfo ref={ref} rootClassName={className}>
-        <Grid lg={3} span={3}>
+        <Grid gap={[10, 20]} lg={3} span={3}>
           {renderSideProjects()}
         </Grid>
       </CardInfo>

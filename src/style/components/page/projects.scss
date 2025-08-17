@@ -35,7 +35,7 @@
         content: "";
         width: $w-full;
         height: $h-full;
-        background: $bg-black-rgba-md;
+        background: linear-gradient(to top, $bg-black-rgba-md 0%, $bg-black-rgba-xs 90%);
         position: absolute;
         top: 0;
         left: 0;

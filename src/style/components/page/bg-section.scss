@@ -18,4 +18,11 @@
     background: $bg-black-rgba-lg;
     z-index: 1;
   }
+  .bg-section-child {
+    position: relative;
+    z-index: 2;
+    & * {
+      color: $text-white;
+    }
+  }
 }

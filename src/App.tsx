@@ -9,6 +9,7 @@ import Experiences from "./components/Page/Experiences";
 import Projects from "./components/Page/Projects";
 import Contact from "./components/Page/Contact";
 import ScrollParallax from "./components/Page/Common/ScrollParallax";
+import SloganLoveCoding from "./components/Page/Common/Slogan/SloganLoveCoding";
 import bgCoding from "/bg-coding.png";
 import bgVector from "/bg-vector.jpg";
 import "./style/main.scss";
@@ -26,7 +27,9 @@ function App() {
         </div>
 
         <FogOverlay />
-        <BgSection bgURL={bgVector} />
+        <BgSection bgURL={bgVector}>
+          <SloganLoveCoding />
+        </BgSection>
         <FogOverlay position="top" />
 
         <ScrollParallax>

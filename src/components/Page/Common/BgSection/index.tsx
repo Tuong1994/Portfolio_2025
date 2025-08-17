@@ -19,7 +19,7 @@ const BgSection: ForwardRefRenderFunction<HTMLDivElement, BgSectionProps> = (
 
   return (
     <div ref={ref} className={className} style={rootStyle} {...restProps}>
-      {children}
+      <div className="bg-section-child">{children}</div>
     </div>
   );
 };

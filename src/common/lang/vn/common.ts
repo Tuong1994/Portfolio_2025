@@ -98,6 +98,12 @@ const common_vn = {
       api: "Đã xảy ra lỗi",
     },
   },
+  slogan: {
+    loveCoding: {
+      prefix: "Tôi",
+      suffix: "lập trình",
+    },
+  },
 };
 
 export default common_vn;

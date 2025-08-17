@@ -98,6 +98,12 @@ const common_en = {
       api: "Api network failed",
     },
   },
+  slogan: {
+    loveCoding: {
+      prefix: "I",
+      suffix: "Coding",
+    },
+  },
 };
 
 export default common_en;
