@@ -1,6 +1,5 @@
 import { EMode } from "@/components/UI/Layout/Context";
-import { ISourceOptions, MoveDirection, OutMode } from "@tsparticles/engine";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import useLayout from "@/components/UI/Layout/useLayout";
 
 type ParticlesTheme = {
@@ -9,108 +8,70 @@ type ParticlesTheme = {
   linkColor: string;
 };
 
-const useParticles = (options?: ISourceOptions) => {
+const colorWhite = '#fff';
+const colorBlack = '#222';
+const colorBlue = '#0ea5e9';
+const colorRed = '#f43f5e';
+const colorGreen = '#10b981';
+const colorOrange = '#f5a316';
+const colorYellow = '#ffe601';
+const colorPurple = '#6366f1';
+const colorPink = '#ec4899';
+
+const useParticles = (hasColor?: boolean) => {
   const [particlesTheme, setParticlesTheme] = useState<ParticlesTheme>({
-    background: "#fff",
-    particlesColor: "#222",
-    linkColor: "#222",
+    background: colorWhite,
+    particlesColor: colorBlack,
+    linkColor: colorBlack,
   });
 
   const { layoutValue } = useLayout();
 
-  const { layoutTheme } = layoutValue;
+  const { layoutTheme, layoutColor } = layoutValue;
 
-   useEffect(() => {
-      if (layoutTheme === EMode.LIGHT) {
-        setParticlesTheme((prev) => ({
-          ...prev,
-          background: "#fff",
-          particlesColor: "#222",
-          linkColor: "#222",
-        }));
-      } else {
-        setParticlesTheme((prev) => ({
-          ...prev,
-          background: "#222",
-          particlesColor: "#fff",
-          linkColor: "#fff",
-        }));
-      }
-    }, [layoutTheme]);
+  const bgColors: Record<string, string> = {
+    blue: colorBlue,
+    green: colorGreen,
+    red: colorRed,
+    orange: colorOrange,
+    yellow: colorYellow,
+    purple: colorPurple,
+    pink: colorPink,
+  }
 
-  const defaultOptions: ISourceOptions = useMemo(() => {
-    if (options) return options;
-    return {
-      fullScreen: false,
-      background: {
-        color: {
-          value: particlesTheme.background,
-        },
-      },
-      fpsLimit: 120,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: "push",
-          },
-          onHover: {
-            enable: true,
-            mode: "repulse",
-          },
-        },
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
-          },
-        },
-      },
-      particles: {
-        color: {
-          value: particlesTheme.particlesColor,
-        },
-        links: {
-          color: particlesTheme.linkColor,
-          distance: 150,
-          enable: true,
-          opacity: 0.5,
-          width: 1,
-        },
-        move: {
-          direction: MoveDirection.none,
-          enable: true,
-          outModes: {
-            default: OutMode.out,
-          },
-          random: false,
-          speed: 6,
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: true,
-          },
-          value: 80,
-        },
-        opacity: {
-          value: 0.5,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: { min: 1, max: 5 },
-        },
-      },
-      detectRetina: true,
-    };
-  }, [particlesTheme.background, particlesTheme.particlesColor, particlesTheme.linkColor]);
+  // Set dark/light mode -> work when don't apply color theme
+  useEffect(() => {
+    if (hasColor) return;
+    if (layoutTheme === EMode.LIGHT) {
+      setParticlesTheme((prev) => ({
+        ...prev,
+        background: colorWhite,
+        particlesColor: colorBlack,
+        linkColor: colorBlack,
+      }));
+    } else {
+      setParticlesTheme((prev) => ({
+        ...prev,
+        background: colorBlack,
+        particlesColor: colorWhite,
+        linkColor: colorWhite,
+      }));
+    }
+  }, [layoutTheme, hasColor]);
 
-  return { particlesTheme, defaultOptions };
+  // Set theme -> disabled dark/light mode
+  useEffect(() => {
+    if(!hasColor) return;
+    const background = bgColors[layoutColor]
+    setParticlesTheme((prev) => ({
+        ...prev,
+        background,
+        particlesColor: colorWhite,
+        linkColor: colorWhite,
+      }));
+  }, [layoutColor, hasColor])
+
+  return { particlesTheme };
 };
 
 export default useParticles;

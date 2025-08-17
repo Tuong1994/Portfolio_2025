@@ -1,7 +1,8 @@
-import { CSSProperties, FC, useEffect, useState } from "react";
+import { FC, useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { type ISourceOptions } from "@tsparticles/engine";
 import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+import linksOptions from "./linksOptions";
 import useLayout from "@/components/UI/Layout/useLayout";
 import useParticles from "./useParticles";
 import utils from "@/utils";
@@ -12,18 +13,18 @@ import utils from "@/utils";
 interface BgParticlesProps {
   id?: string;
   rootClassName?: string;
-  style?: CSSProperties;
+  hasColor?: boolean;
   options?: ISourceOptions;
 }
 
-const BgParticles: FC<BgParticlesProps> = ({ options, rootClassName = "", id = "tsparticles", style }) => {
+const BgParticles: FC<BgParticlesProps> = ({ options, rootClassName = "", id = "tsparticles", hasColor }) => {
   const [init, setInit] = useState<boolean>(false);
 
   const { layoutValue } = useLayout();
 
   const { layoutTheme } = layoutValue;
 
-  const { defaultOptions } = useParticles(options);
+  const { particlesTheme } = useParticles(hasColor);
 
   const className = utils.formatClassName("bg-particles", rootClassName);
 
@@ -42,10 +43,13 @@ const BgParticles: FC<BgParticlesProps> = ({ options, rootClassName = "", id = "
     });
   }, []);
 
+  const particlesOptions: ISourceOptions = useMemo(() => {
+    if (options) return options;
+    return linksOptions(particlesTheme.background, particlesTheme.particlesColor);
+  }, [particlesTheme.background, particlesTheme.particlesColor, particlesTheme.linkColor]);
+
   if (init) {
-    return (
-      <Particles id={id} style={style} className={className} key={layoutTheme} options={defaultOptions} />
-    );
+    return <Particles id={id} className={className} key={layoutTheme} options={particlesOptions} />;
   }
 
   return <></>;

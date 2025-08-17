@@ -13,6 +13,8 @@ import Contact from "./components/Page/Contact";
 import ScrollParallax from "./components/Page/Common/ScrollParallax";
 import SloganLoveCoding from "./components/Page/Common/Slogan/SloganLoveCoding";
 import SloganParagraph from "./components/Page/Common/Slogan/SloganParagraph";
+import useParticles from "./components/Page/Common/BgParticles/useParticles";
+import bubbleOptions from "./components/Page/Common/BgParticles/bubbleOptions";
 import bgCoding from "/bg-coding.png";
 import bgVector from "/bg-vector.jpg";
 import "./style/main.scss";
@@ -23,6 +25,8 @@ function App() {
   const { isPhone, isTablet, isLaptop } = useViewpoint();
 
   const responsive = isPhone || isTablet || isLaptop;
+
+  const { particlesTheme } = useParticles(true);
 
   return (
     <>
@@ -54,7 +58,12 @@ function App() {
         <FogOverlay hasColor position="top" />
 
         <div style={{ position: "relative" }}>
-          <BgParticles id="contactParticles" style={{ zIndex: 2 }} />
+          <BgParticles
+            hasColor
+            id="contactParticles"
+            rootClassName="bg-particles-contact"
+            options={bubbleOptions(particlesTheme.background, particlesTheme.particlesColor)}
+          />
           <Contact />
         </div>
       </Container>
