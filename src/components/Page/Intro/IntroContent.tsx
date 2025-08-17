@@ -29,7 +29,7 @@ const IntroContent: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
       <Space>
         <Paragraph rootClassName="content-greeting">{lang.intro.greeting}</Paragraph>
         <Paragraph strong rootClassName="content-name">
-          Jack
+          Nhâm Bổn Tường
         </Paragraph>
       </Space>
       <Paragraph lineHeight={35} variant="secondary" aligns="justify" rootClassName="content-text">

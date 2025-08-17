@@ -73,6 +73,9 @@
       font-family: "Exo", sans-serif;
       font-size: $text-xxl + 1rem !important;
       transition: color $transition-time-sm $transition-fn;
+      @include respond(mdPhone) {
+        font-size: $text-xxl + 0.5rem !important;
+      }
     }
     .content-text {
       font-size: $text-3xl !important;

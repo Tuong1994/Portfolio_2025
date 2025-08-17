@@ -24,7 +24,7 @@ const useReveal = (ref: MutableRefObject<HTMLElement | null>, options: RevealOpt
       {
         root: null, // viewport
         rootMargin: `0px 0px -${margin}px 0px`, // top, right, bottom, left
-        threshold: 0, // chỉ cần chạm vào là tính
+        threshold: 0.1, // chỉ cần chạm vào là tính
       }
     );
     observer.observe(ref.current);
