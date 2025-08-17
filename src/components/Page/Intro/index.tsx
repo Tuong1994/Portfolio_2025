@@ -1,5 +1,6 @@
 import { forwardRef, ForwardRefRenderFunction } from "react";
 import { Flex, AnchorScroll } from "@/components/UI";
+import { useViewpoint } from "@/hooks";
 import IntroAvatar from "./IntroAvatar";
 import IntroContent from "./IntroContent";
 import IntroArrow from "./IntroArrow";
@@ -11,9 +12,13 @@ const { FlexRow, FlexCol } = Flex;
 const { AnchorSection } = AnchorScroll;
 
 const Intro: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
+  const { isPhone, isTablet, isLgTablet } = useViewpoint();
+
   const { layoutValue } = useLayout();
 
   const { layoutColor, layoutTheme } = layoutValue;
+
+  const responsive = isPhone || isTablet || isLgTablet;
 
   const colorClassName = `intro-${layoutColor}`;
 
@@ -25,10 +30,10 @@ const Intro: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
     <AnchorSection>
       <section ref={ref} className={className}>
         <FlexRow justify="between">
-          <FlexCol xs={24} md={9} lg={8} span={8}>
-            <IntroAvatar />
+          <FlexCol xs={24} md={9} lg={8} span={4}>
+            {responsive && <IntroAvatar />}
           </FlexCol>
-          <FlexCol xs={24} md={14} lg={15} span={15}>
+          <FlexCol xs={24} md={14} lg={15} span={20}>
             <IntroContent />
           </FlexCol>
         </FlexRow>

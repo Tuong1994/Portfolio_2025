@@ -1,0 +1,51 @@
+.bg-avatar {
+  .bg-avatar-view {
+    width: $w-10 * 5;
+    height: $h-full;
+    background: $bg-dark;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url("/avatar-filter.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-color $transition-time-md $transition-fn;
+    &::after {
+      content: "";
+      width: $w-full;
+      height: $h-full;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to top, $bg-black-rgba-sm 20%, $bg-black-rgba-xs 90%);
+    }
+  }
+  .bg-avatar-fog {
+    width: $w-10 * 5;
+    min-height: $h-5;
+    padding-bottom: $p-5;
+    background: $bg-white;
+    box-shadow: 0 0px 30px 40px $bg-white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    transition: background-color $transition-time-md $transition-fn;
+  }
+}
+
+.bg-avatar-dark {
+  .bg-avatar-view {
+    background: $bg-white;
+    background-image: url("/avatar-filter.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .bg-avatar-fog {
+    background: $bg-dark;
+    box-shadow: 0 0px 30px 40px $bg-dark;
+  }
+}

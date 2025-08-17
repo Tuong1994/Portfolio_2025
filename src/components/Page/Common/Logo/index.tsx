@@ -12,7 +12,9 @@ const Logo: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
 
   const logo = layoutTheme === EMode.DARK ? logoDark : logoLight;
 
-  const className = utils.formatClassName("logo");
+  const themeClassName = `logo-${layoutTheme}`
+
+  const className = utils.formatClassName("logo", themeClassName);
   return (
     <div ref={ref} className={className}>
       <img className="logo-image" src={logo} alt={logo} />

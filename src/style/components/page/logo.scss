@@ -1,8 +1,16 @@
 .logo {
   width: $w-5;
   height: $h-5;
+  padding: $p-1 - 0.4;
+  background: $bg-white;
+  border-radius: $rounded;
+  transition: background-color $transition-time-md $transition-fn;
   .logo-image {
     width: $w-full;
     height: $h-full;
   }
+}
+
+.logo-dark {
+  background: $bg-dark;
 }
