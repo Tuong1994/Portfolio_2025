@@ -10,10 +10,13 @@ const BgSection: ForwardRefRenderFunction<HTMLDivElement, BgSectionProps> = (
   { bgURL, children, style, ...restProps },
   ref
 ) => {
+  const isIOS = typeof navigator !== 'undefined' && /iP(ad|hone|od)/.test(navigator.userAgent);
+
   const className = utils.formatClassName("bg-section");
 
   const rootStyle: CSSProperties = {
     backgroundImage: `url(${bgURL})`,
+     backgroundAttachment: isIOS ? 'scroll' : 'fixed',
     ...style,
   };
 
