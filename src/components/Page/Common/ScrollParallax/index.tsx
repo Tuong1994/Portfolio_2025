@@ -9,7 +9,7 @@ interface ScrollParallaxProps {
 }
 
 const ScrollParallax: ForwardRefRenderFunction<HTMLDivElement, ScrollParallaxProps> = (
-  { bubbleCount = 80, children },
+  { bubbleCount = 100, children },
   ref
 ) => {
   const { layoutValue } = useLayout();

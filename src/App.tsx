@@ -33,6 +33,7 @@ function App() {
           <About />
           <Experiences />
           <Projects />
+          <FogOverlay position="top" />
         </ScrollParallax>
 
         <FogOverlay />

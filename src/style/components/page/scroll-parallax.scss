@@ -1,4 +1,6 @@
 .scroll-parallax {
+  width: $w-full;
+  height: $h-full;
   position: relative;
   overflow: hidden;
   .parallax-background {
@@ -7,6 +9,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 2;
     transition: transform $transition-time-md $transition-fn;
     .background-bubble {
@@ -73,4 +77,3 @@
     }
   }
 }
-
