@@ -2,7 +2,7 @@
   height: $h-3;
   width: $w-3;
   border-radius: $rounded-full;
-  border: 2px solid $bg-purple-rgba-sm;
+  border: 2px solid transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,54 +20,94 @@
     height: $h-1 - 0.5;
     opacity: 1;
     border-radius: $rounded-full;
-    background: $bg-purple-rgba-sm;
     transition: opacity $transition-time-sm $transition-fn,
       background-color $transition-time-sm $transition-fn;
   }
 }
 
 .cursor-hover {
-  height: $h-5;
-  width: $w-5;
+  // height: $h-5;
+  // width: $w-5;
   border-color: transparent !important;
   .cursor-dot {
     opacity: 0;
   }
 }
 
-// Mode
-.cursor-dark {
-  border-color: $bg-white;
+// Theme
+.cursor-blue {
+  border-color: $bg-blue;
   .cursor-dot {
-    background: $bg-white;
+    background: $bg-blue;
   }
 }
 
-// Theme
-.cursor-hover.cursor-blue {
+.cursor-green {
+  border-color: $bg-green;
+  .cursor-dot {
+    background: $bg-green;
+  }
+}
+
+.cursor-red {
+  border-color: $bg-red;
+  .cursor-dot {
+    background: $bg-red;
+  }
+}
+
+.cursor-orange {
+  border-color: $bg-orange;
+  .cursor-dot {
+    background: $bg-orange;
+  }
+}
+
+.cursor-yellow {
+  border-color: $bg-yellow;
+  .cursor-dot {
+    background: $bg-yellow;
+  }
+}
+
+.cursor-purple {
+  border-color: $bg-purple;
+  .cursor-dot {
+    background: $bg-purple;
+  }
+}
+
+.cursor-pink {
+  border-color: $bg-pink;
+  .cursor-dot {
+    background: $bg-pink;
+  }
+}
+
+.cursor-blue.cursor-hover {
   background: $bg-blue-rgba-sm;
 }
 
-.cursor-hover.cursor-green {
+.cursor-green.cursor-hover {
   background: $bg-green-rgba-sm;
 }
 
-.cursor-hover.cursor-red {
+.cursor-red.cursor-hover {
   background: $bg-red-rgba-sm;
 }
 
-.cursor-hover.cursor-orange {
+.cursor-orange.cursor-hover {
   background: $bg-orange-rgba-sm;
 }
 
-.cursor-hover.cursor-yellow {
+.cursor-yellow.cursor-hover {
   background: $bg-yellow-rgba-sm;
 }
 
-.cursor-hover.cursor-purple {
+.cursor-purple.cursor-hover {
   background: $bg-purple-rgba-sm;
 }
 
-.cursor-hover.cursor-pink {
+.cursor-pink.cursor-hover {
   background: $bg-pink-rgba-sm;
 }

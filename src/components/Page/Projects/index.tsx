@@ -66,6 +66,7 @@ const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
           items={items}
           color={layoutColor as TabsColor}
           rootClassName="projects-content"
+          headClassName="hover-target"
           contentStyle={{ overflow: "unset" }}
         />
       </SectionWrapper>

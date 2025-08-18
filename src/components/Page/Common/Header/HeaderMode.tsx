@@ -26,7 +26,7 @@ const HeaderMode: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
     { label: lang.header.mode.dark, value: EMode.DARK },
   ];
 
-  const className = utils.formatClassName("header-mode");
+  const className = utils.formatClassName("header-mode", "hover-target");
 
   const handleSelect = async (mode: SelectValue) => {
     await loading.trigger();

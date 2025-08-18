@@ -24,7 +24,7 @@ const HeaderLocale: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
     { label: lang.header.locale.vn, value: ELang.VN },
   ];
 
-  const className = utils.formatClassName("header-locale");
+  const className = utils.formatClassName("header-locale", "hover-target");
 
   const handleSelect = async (locale: SelectValue) => {
     await loading.trigger();

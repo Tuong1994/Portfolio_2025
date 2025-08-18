@@ -81,7 +81,9 @@ const ContactForm: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
         <FormItem name="message" rules={required()}>
           <TextArea required label={lang.contact.label.message} />
         </FormItem>
-        <Button loading={loading} color={layoutColor}>{lang.contact.action}</Button>
+        <Button loading={loading} color={layoutColor}>
+          {lang.contact.action}
+        </Button>
       </Form>
     </CardInfo>
   );

@@ -28,7 +28,7 @@ const HeaderTheme: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
     return colors.map((color) => {
       const isSelected = layoutColor === color;
       const selectedClassName = isSelected ? `theme-item-${color}-selected` : "";
-      const itemClassName = utils.formatClassName("theme-item", `theme-item-${color}`, selectedClassName);
+      const itemClassName = utils.formatClassName("theme-item", `theme-item-${color}`, "hover-target", selectedClassName);
       const colorTitles: Record<string, string> = {
         blue: lang.header.theme.blue,
         green: lang.header.theme.green,
