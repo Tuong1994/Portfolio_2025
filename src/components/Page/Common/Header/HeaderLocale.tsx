@@ -1,10 +1,11 @@
 import { forwardRef, ForwardRefRenderFunction } from "react";
 import { Select } from "@/components/Control";
 import { Flex, Typography } from "@/components/UI";
-import { useLang } from "@/hooks";
 import { ControlColor, SelectOptions, SelectValue } from "@/components/Control/type";
+import { useLang } from "@/hooks";
 import { ELang } from "@/common/enum";
 import useLayout from "@/components/UI/Layout/useLayout";
+import useLoadingOverlayStore from "../LoadingOverlay/LoadingOverlayStore";
 import utils from "@/utils";
 
 const { FlexRow, FlexCol } = Flex;
@@ -16,6 +17,8 @@ const HeaderLocale: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
 
   const { layoutValue } = useLayout();
 
+  const loading = useLoadingOverlayStore();
+
   const localeOptions: SelectOptions = [
     { label: lang.header.locale.en, value: ELang.EN },
     { label: lang.header.locale.vn, value: ELang.VN },
@@ -23,7 +26,10 @@ const HeaderLocale: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => 
 
   const className = utils.formatClassName("header-locale");
 
-  const handleSelect = (locale: SelectValue) => switchLang(locale as ELang);
+  const handleSelect = async (locale: SelectValue) => {
+    await loading.trigger();
+    switchLang(locale as ELang);
+  };
 
   return (
     <FlexRow ref={ref} rootClassName={className} aligns="middle" justify="between">

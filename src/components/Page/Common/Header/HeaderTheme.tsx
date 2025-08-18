@@ -3,6 +3,7 @@ import { Divider } from "@/components/UI";
 import { LayoutColor } from "@/components/UI/Layout/Context";
 import { useLang } from "@/hooks";
 import useLayout from "@/components/UI/Layout/useLayout";
+import useLoadingOverlayStore from "../LoadingOverlay/LoadingOverlayStore";
 import utils from "@/utils";
 
 const HeaderTheme: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
@@ -12,11 +13,16 @@ const HeaderTheme: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
 
   const { layoutColor } = layoutValue;
 
+  const loading = useLoadingOverlayStore()
+
   const colors: LayoutColor[] = ["blue", "green", "red", "orange", "yellow", "pink", "purple"];
 
   const className = utils.formatClassName("header-theme");
 
-  const handleSelect = (color: LayoutColor) => layoutApi.onSwitchColor(color as LayoutColor);
+  const handleSelect = async (color: LayoutColor) => {
+    await loading.trigger()
+    layoutApi.onSwitchColor(color as LayoutColor)
+  };
 
   const renderTheme = () => {
     return colors.map((color) => {

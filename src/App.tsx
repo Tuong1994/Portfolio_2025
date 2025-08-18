@@ -15,57 +15,67 @@ import Experiences from "./components/Page/Experiences";
 import Projects from "./components/Page/Projects";
 import Contact from "./components/Page/Contact";
 import useParticles from "./components/Page/Common/BgParticles/useParticles";
+import useLoadingOverlayStore from "./components/Page/Common/LoadingOverlay/LoadingOverlayStore";
 import bubbleOptions from "./components/Page/Common/BgParticles/bubbleOptions";
 import "./style/main.scss";
+import { useEffect } from "react";
 
 const { Container } = Layout;
 
 function App() {
   const { isPhone, isTablet, isLaptop } = useViewpoint();
 
+  const { particlesTheme } = useParticles(true);
+
+  const loading = useLoadingOverlayStore();
+
   const responsive = isPhone || isTablet || isLaptop;
 
-  const { particlesTheme } = useParticles(true);
+  useEffect(() => {
+    loading.initialLoad();
+  }, []);
 
   return (
     <>
-      <Container style={{ overflow: "hidden" }}>
-        <div style={{ position: "relative" }}>
-          <Header />
-          {!responsive && <BgAvatar />}
-          <BgParticles id="bannerParticles" />
-          <Intro />
-        </div>
+      {loading.isReady && (
+        <Container style={{ overflow: "hidden" }}>
+          <div style={{ position: "relative" }}>
+            <Header />
+            {!responsive && <BgAvatar />}
+            <BgParticles id="bannerParticles" />
+            <Intro />
+          </div>
 
-        <FogOverlay />
-        <BgSection bgURL="/bg-vector.jpg">
-          <SloganLoveCoding />
-        </BgSection>
-        <FogOverlay position="top" />
-
-        <ScrollParallax>
-          <About />
-          <Experiences />
-          <Projects />
+          <FogOverlay />
+          <BgSection bgURL="/bg-vector.jpg">
+            <SloganLoveCoding />
+          </BgSection>
           <FogOverlay position="top" />
-        </ScrollParallax>
 
-        <FogOverlay />
-        <BgSection bgURL="/bg-coding.png">
-          <SloganParagraph />
-        </BgSection>
-        <FogOverlay hasColor position="top" />
+          <ScrollParallax>
+            <About />
+            <Experiences />
+            <Projects />
+            <FogOverlay position="top" />
+          </ScrollParallax>
 
-        <div style={{ position: "relative" }}>
-          <BgParticles
-            hasColor
-            id="contactParticles"
-            rootClassName="bg-particles-contact"
-            options={bubbleOptions(particlesTheme.background, particlesTheme.particlesColor)}
-          />
-          <Contact />
-        </div>
-      </Container>
+          <FogOverlay />
+          <BgSection bgURL="/bg-coding.png">
+            <SloganParagraph />
+          </BgSection>
+          <FogOverlay hasColor position="top" />
+
+          <div style={{ position: "relative" }}>
+            <BgParticles
+              hasColor
+              id="contactParticles"
+              rootClassName="bg-particles-contact"
+              options={bubbleOptions(particlesTheme.background, particlesTheme.particlesColor)}
+            />
+            <Contact />
+          </div>
+        </Container>
+      )}
 
       <ToastMessage />
 

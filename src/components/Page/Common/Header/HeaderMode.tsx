@@ -5,6 +5,7 @@ import { Select } from "@/components/Control";
 import { ControlColor, SelectOptions, SelectValue } from "@/components/Control/type";
 import { EMode } from "@/components/UI/Layout/Context";
 import useLayout from "@/components/UI/Layout/useLayout";
+import useLoadingOverlayStore from "../LoadingOverlay/LoadingOverlayStore";
 import utils from "@/utils";
 
 const { FlexRow, FlexCol } = Flex;
@@ -18,6 +19,8 @@ const HeaderMode: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
 
   const { layoutColor, layoutTheme } = layoutValue;
 
+  const loading = useLoadingOverlayStore();
+
   const modeOptions: SelectOptions = [
     { label: lang.header.mode.light, value: EMode.LIGHT },
     { label: lang.header.mode.dark, value: EMode.DARK },
@@ -25,7 +28,10 @@ const HeaderMode: ForwardRefRenderFunction<HTMLDivElement, {}> = ({}, ref) => {
 
   const className = utils.formatClassName("header-mode");
 
-  const handleSelect = (mode: SelectValue) => layoutApi.onSwitchTheme(mode as EMode);
+  const handleSelect = async (mode: SelectValue) => {
+    await loading.trigger();
+    layoutApi.onSwitchTheme(mode as EMode);
+  };
 
   return (
     <FlexRow ref={ref} rootClassName={className} aligns="middle" justify="between">

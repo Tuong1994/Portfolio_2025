@@ -7,34 +7,27 @@ interface LoadingOverLayState {
   trigger: (time?: number) => Promise<void>;
 }
 
-const store: StateCreator<LoadingOverLayState> = (set, get) => ({
+const store: StateCreator<LoadingOverLayState> = (set) => ({
   open: false,
   isReady: false,
   initialLoad: async (time = 2000) => {
-    const state = get();
-    let openValue = state.open;
-    let readyValue = state.isReady;
-    openValue = true;
+    set((state) => ({ ...state, open: true }));
     await new Promise<void>((resolve) => {
       setTimeout(() => {
-        openValue = false;
+        set((state) => ({ ...state, open: false }));
         resolve();
       }, time);
     });
-    readyValue = true;
-    return set((state) => ({ ...state, open: openValue, isReady: readyValue }));
+    set((state) => ({ ...state, isReady: true }));
   },
   trigger: async (time = 2000) => {
-    const state = get();
-    let openValue = state.open;
-    openValue = true;
+    set((state) => ({ ...state, open: true }));
     await new Promise<void>((resolve) => {
       setTimeout(() => {
-        openValue = false;
+        set((state) => ({ ...state, open: false }));
         resolve();
       }, time);
     });
-    return set((state) => ({ ...state, open: openValue }));
   },
 });
 
