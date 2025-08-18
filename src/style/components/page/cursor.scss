@@ -1,0 +1,73 @@
+.cursor {
+  height: $h-3;
+  width: $w-3;
+  border-radius: $rounded-full;
+  border: 2px solid $bg-purple-rgba-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: transform $transition-time-xs linear, border-color $transition-time-sm $transition-fn,
+    background-color $transition-time-sm $transition-fn, width $transition-time-sm $transition-fn,
+    height $transition-time-sm $transition-fn;
+  z-index: 9999;
+  will-change: transform;
+  .cursor-dot {
+    width: $w-1 - 0.5;
+    height: $h-1 - 0.5;
+    opacity: 1;
+    border-radius: $rounded-full;
+    background: $bg-purple-rgba-sm;
+    transition: opacity $transition-time-sm $transition-fn,
+      background-color $transition-time-sm $transition-fn;
+  }
+}
+
+.cursor-hover {
+  height: $h-5;
+  width: $w-5;
+  border-color: transparent !important;
+  .cursor-dot {
+    opacity: 0;
+  }
+}
+
+// Mode
+.cursor-dark {
+  border-color: $bg-white;
+  .cursor-dot {
+    background: $bg-white;
+  }
+}
+
+// Theme
+.cursor-hover.cursor-blue {
+  background: $bg-blue-rgba-sm;
+}
+
+.cursor-hover.cursor-green {
+  background: $bg-green-rgba-sm;
+}
+
+.cursor-hover.cursor-red {
+  background: $bg-red-rgba-sm;
+}
+
+.cursor-hover.cursor-orange {
+  background: $bg-orange-rgba-sm;
+}
+
+.cursor-hover.cursor-yellow {
+  background: $bg-yellow-rgba-sm;
+}
+
+.cursor-hover.cursor-purple {
+  background: $bg-purple-rgba-sm;
+}
+
+.cursor-hover.cursor-pink {
+  background: $bg-pink-rgba-sm;
+}

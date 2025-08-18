@@ -1,5 +1,6 @@
-import { ToastMessage, Layout } from "./components/UI";
+import { useEffect } from "react";
 import { useViewpoint } from "./hooks";
+import { ToastMessage, Layout } from "./components/UI";
 import Header from "./components/Page/Common/Header";
 import BgParticles from "./components/Page/Common/BgParticles";
 import BgAvatar from "./components/Page/Common/BgAvatar/BgAvatar";
@@ -9,6 +10,7 @@ import LoadingOverlay from "./components/Page/Common/LoadingOverlay";
 import ScrollParallax from "./components/Page/Common/ScrollParallax";
 import SloganLoveCoding from "./components/Page/Common/Slogan/SloganLoveCoding";
 import SloganParagraph from "./components/Page/Common/Slogan/SloganParagraph";
+import Cursor from "./components/Page/Common/Cursor";
 import Intro from "./components/Page/Intro";
 import About from "./components/Page/About";
 import Experiences from "./components/Page/Experiences";
@@ -18,7 +20,6 @@ import useParticles from "./components/Page/Common/BgParticles/useParticles";
 import useLoadingOverlayStore from "./components/Page/Common/LoadingOverlay/LoadingOverlayStore";
 import bubbleOptions from "./components/Page/Common/BgParticles/bubbleOptions";
 import "./style/main.scss";
-import { useEffect } from "react";
 
 const { Container } = Layout;
 
@@ -78,6 +79,8 @@ function App() {
       )}
 
       <ToastMessage />
+
+      <Cursor />
 
       <LoadingOverlay />
     </>
