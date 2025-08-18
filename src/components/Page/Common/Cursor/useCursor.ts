@@ -10,12 +10,8 @@ const useCursor = (cursorRef: MutableRefObject<HTMLDivElement | null>) => {
 
   // Cập nhật vị trí chuột
   useEffect(() => {
-    const handleMouseMove = (e: any) => {
-      mousePos.current = { x: e.clientX, y: e.clientY };
-    };
-
+    const handleMouseMove = (e: any) => (mousePos.current = { x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", handleMouseMove);
-
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
@@ -29,9 +25,7 @@ const useCursor = (cursorRef: MutableRefObject<HTMLDivElement | null>) => {
       }
       requestRef.current = requestAnimationFrame(animate);
     };
-
     requestRef.current = requestAnimationFrame(animate);
-
     return () => cancelAnimationFrame(requestRef.current);
   }, [cursorSize]);
 
@@ -42,17 +36,14 @@ const useCursor = (cursorRef: MutableRefObject<HTMLDivElement | null>) => {
       cursorRef.current?.classList.add("cursor-hover");
       setCursorSize(60);
     };
-
     const handleMouseLeave = () => {
       cursorRef.current?.classList.remove("cursor-hover");
       setCursorSize(30);
     };
-
     hoverTargets.forEach((el) => {
       el.addEventListener("mouseenter", handleMouseEnter);
       el.addEventListener("mouseleave", handleMouseLeave);
     });
-
     return () => {
       hoverTargets.forEach((el) => {
         el.removeEventListener("mouseenter", () => {});
