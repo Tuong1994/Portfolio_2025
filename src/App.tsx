@@ -80,7 +80,7 @@ function App() {
 
       <ToastMessage />
 
-      <Cursor />
+      {!responsive && <Cursor />}
 
       <LoadingOverlay />
     </>
